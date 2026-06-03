@@ -1,9 +1,10 @@
 PYTHON  := python3
 
-EXCEL       := 2023_04_05_Gel_Iceberg_patient1.xlsx
-MAPPING     := iceberg_neurobagel_mapping.yaml
-TSV_OUT     := iceberg_neurobagel_phenotype.tsv
-IMAGING_OUT := iceberg_neurobagel_imaging.tsv
+EXCEL         := 2023_04_05_Gel_Iceberg_patient1.xlsx
+MAPPING       := iceberg_neurobagel_mapping.yaml
+TSV_OUT       := iceberg_neurobagel_phenotype.tsv
+IMAGING_OUT   := iceberg_neurobagel_imaging.tsv
+SYNTHETIC_OUT := iceberg_neurobagel_synthetic.tsv
 
 # ── Default target ─────────────────────────────────────────────────────────────
 .PHONY: all
@@ -15,9 +16,10 @@ help:
 	@echo ""
 	@echo "ICEBERG → Neurobagel extraction pipeline"
 	@echo ""
-	@echo "  make extract   Run phenotype extraction → $(TSV_OUT)"
-	@echo "  make imaging   Build imaging table → $(IMAGING_OUT)"
-	@echo "  make all       extract + imaging"
+	@echo "  make extract    Run phenotype extraction → $(TSV_OUT)"
+	@echo "  make imaging    Build imaging table → $(IMAGING_OUT)"
+	@echo "  make synthetic  Generate synthetic test TSV → $(SYNTHETIC_OUT)"
+	@echo "  make all        extract + imaging"
 	@echo "  make clean     Remove generated output files"
 	@echo "  make help      Show this message"
 	@echo ""
@@ -44,8 +46,16 @@ imaging:
 		--tsv     $(TSV_OUT) \
 		--output  $(IMAGING_OUT)
 
+# ── Synthetic test data ────────────────────────────────────────────────────────
+.PHONY: synthetic
+synthetic:
+	$(PYTHON) generate_synthetic_tsv.py \
+		--mapping      $(MAPPING) \
+		--tsv-template $(TSV_OUT) \
+		--output       $(SYNTHETIC_OUT)
+
 # ── Clean ──────────────────────────────────────────────────────────────────────
 .PHONY: clean
 clean:
-	rm -f $(TSV_OUT) $(IMAGING_OUT)
+	rm -f $(TSV_OUT) $(IMAGING_OUT) $(SYNTHETIC_OUT)
 	@echo "Cleaned."

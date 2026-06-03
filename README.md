@@ -36,6 +36,7 @@ Generated outputs:
 ```
 iceberg_neurobagel_phenotype.tsv           # Wide TSV ready for Neurobagel annotation  (make extract)
 iceberg_neurobagel_imaging.tsv             # Neurobagel imaging table                  (make imaging)
+iceberg_neurobagel_synthetic.tsv           # Synthetic test TSV for annotation testing (make synthetic)
 ```
 
 ---
@@ -120,6 +121,30 @@ python build_imaging_table.py \
 Flags without a Neurobagel modality mapping (`irm_fait`, `irm_r2`, `irm_melan`,
 `datsc_real`) are silently skipped.
 
+### `generate_synthetic_tsv.py` — Step 3: Synthetic annotation test data
+
+Generates a synthetic TSV with the same column names and order as the real
+phenotype TSV, but with made-up values.  Every documented categorical level
+and every expected missing-value code appears at least once in its column.
+For integer-scored columns with a range of ≤ 30 values, all integers in the
+range are included.  For wider ranges and continuous columns a representative
+sample of plausible values is generated.
+
+```bash
+# Requires the real phenotype TSV to already exist (for column order)
+make extract
+make synthetic
+
+# Or directly:
+python generate_synthetic_tsv.py \
+    --mapping      iceberg_neurobagel_mapping.yaml \
+    --tsv-template iceberg_neurobagel_phenotype.tsv \
+    --output       iceberg_neurobagel_synthetic.tsv
+```
+
+The synthetic TSV contains no real participant data and is safe to share for
+annotation tests.
+
 ### Future scripts (planned)
 
 *(none currently)*
@@ -173,7 +198,8 @@ relative to the Dictionnaire sheet's logical ordering.
 | `make` / `make all` | Run extraction + build imaging table |
 | `make extract` | Run phenotype extraction script |
 | `make imaging` | Build Neurobagel imaging table |
-| `make clean` | Remove generated TSV files |
+| `make synthetic` | Generate synthetic annotation test TSV |
+| `make clean` | Remove all generated TSV files |
 | `make help` | Print available targets |
 
 Override any variable on the command line:
