@@ -1,0 +1,628 @@
+# ICEBERG Cohort — Neurobagel Variable Mapping
+# Source: 2023_04_05_Gel_Iceberg_patient1.xlsx (Dictionnaire sheet)
+# column_index values are 0-based and sheet-specific.
+# All sheets share num_sujet + redcap_event_name as the join key.
+
+metadata:
+  source_file: "2023_04_05_Gel_Iceberg_patient1.xlsx"
+  study: "ICEBERG cohort (Parkinson's disease and at-risk groups, longitudinal)"
+  note: >
+    Neurobagel supports nb:ParticipantID, nb:SessionID, nb:Age, nb:Sex,
+    nb:Diagnosis, and nb:Assessment. Imaging modality availability flags
+    are included separately for Neurobagel imaging-table construction
+    (not annotatable via the phenotypic annotation tool).
+
+join_keys:
+  - column_name: num_sujet
+    sheet: Général   # column 0 in every data sheet
+    column_index: 0
+    description: "Unique participant number — present as column 0 in every data sheet"
+  - column_name: redcap_event_name
+    sheet: Général   # column 1 in every data sheet
+    column_index: 1
+    description: "REDCap visit/event name — present as column 1 in every data sheet"
+
+# ─────────────────────────────────────────────────────────────────────────────
+# NEUROBAGEL PHENOTYPIC VARIABLES
+# ─────────────────────────────────────────────────────────────────────────────
+neurobagel_variables:
+
+  # ── Identifiers ─────────────────────────────────────────────────────────────
+  participant_id:
+    neurobagel_term: "nb:ParticipantID"
+    variable_type: Identifier
+    columns:
+      - sheet: Général
+        column_name: num_sujet
+        column_index: 0
+        description: "Unique participant number"
+        missing_values: []
+
+  session_id:
+    neurobagel_term: "nb:SessionID"
+    variable_type: Identifier
+    columns:
+      - sheet: Général
+        column_name: redcap_event_name
+        column_index: 1
+        description: "REDCap event identifier encoding study visit"
+        unique_values:
+          - v0_arm_1          # Visit 0 (baseline)
+          - v1_arm_1          # Visit 1 (~1 year)
+          - v2_arm_1          # Visit 2 (~2 years)
+          - v3_arm_1          # Visit 3 (~3 years)
+          - v4_arm_1          # Visit 4 (~4 years)
+          - m6_optionnel__6_mo_arm_1  # Optional 6-month visit
+          - gen_arm_1          # General/administrative
+          - covid19_arm_1      # COVID-19 follow-up
+        missing_values: []
+
+  # ── Demographics ────────────────────────────────────────────────────────────
+  sex:
+    neurobagel_term: "nb:Sex"
+    variable_type: Categorical
+    neurobagel_level_terms:
+      "1": "snomed:248153007"   # Male
+      "2": "snomed:248152002"   # Female
+    columns:
+      - sheet: Général
+        column_name: sexe
+        column_index: 5
+        description: "Biological sex of the participant"
+        levels:
+          "1": "Masculin (Male)"
+          "2": "Feminin (Female)"
+        missing_values: ["0", "", NaN]
+
+  diagnosis:
+    neurobagel_term: "nb:Diagnosis"
+    variable_type: Categorical
+    neurobagel_level_terms:
+      "1": "ncit:C94342"         # Healthy Control (Temoin)
+      "2": "TBD"                 # iRBD — needs SNOMED term lookup
+      "3": "TBD"                 # At-risk relative (Apparente) — needs term lookup
+      "4": "snomed:49049000"     # Idiopathic Parkinson's Disease
+      "5": "snomed:49049000"     # PD with genetic mutation (use same PD term; mutation can be sub-typed)
+    columns:
+      - sheet: Général
+        column_name: groupe
+        column_index: 36
+        description: "Participant's diagnostic group at the current study visit"
+        levels:
+          "1": "Temoin (Healthy Control)"
+          "2": "iRBD (Isolated REM Sleep Behavior Disorder)"
+          "3": "Apparente (At-risk first-degree relative of PD patient)"
+          "4": "Parkinson idiopathique (Idiopathic Parkinson's Disease)"
+          "5": "Parkinson avec mutation (Parkinson's Disease with identified genetic mutation)"
+        missing_values: ["0", "", NaN]
+      - sheet: Général
+        column_name: statut_inclusion
+        column_index: 8
+        description: "Participant's diagnostic status at the time of cohort inclusion (may differ from later 'groupe' if classification changed)"
+        levels:
+          "1": "Temoin (Healthy Control)"
+          "2": "iRBD (Isolated REM Sleep Behavior Disorder)"
+          "3": "Apparente (At-risk first-degree relative of PD patient)"
+          "4": "Parkinson idiopathique (Idiopathic Parkinson's Disease)"
+          "5": "Parkinson avec mutation (Parkinson's Disease with identified genetic mutation)"
+        missing_values: ["0", "", NaN]
+
+  age:
+    neurobagel_term: "nb:Age"
+    variable_type: Continuous
+    note: >
+      No precomputed age column exists in the dataset. Age at visit must be
+      calculated downstream as:
+        age = (visit_year + visit_month/12) - (birth_year + birth_month/12)
+      where date_visite is stored as an Excel serial number (origin 1899-12-30).
+    columns:
+      - sheet: Général
+        column_name: ddn_m
+        column_index: 6
+        description: "Birth month (integer, 1–12)"
+        range: [1, 12]
+        missing_values: ["0", "", NaN]
+      - sheet: Général
+        column_name: ddn_a
+        column_index: 7
+        description: "Birth year (4-digit integer, e.g. 1957)"
+        range: [1920, 2005]
+        missing_values: ["0", "", NaN]
+      - sheet: Général
+        column_name: date_visite
+        column_index: 2
+        description: "Visit date stored as Excel serial number (origin 1899-12-30); convert with pd.to_datetime(origin='1899-12-30', unit='D')"
+        missing_values: ["", NaN]
+
+  # ── Assessment tools ─────────────────────────────────────────────────────────
+  assessments:
+
+    # ── MoCA ──────────────────────────────────────────────────────────────────
+    moca:
+      assessment_name: "Montreal Cognitive Assessment (MoCA)"
+      neurobagel_term: "nb:Assessment"
+      assessment_term_url: "snomed:859351000000102"
+      sheet: Neuropsy
+      admin_flags:
+        - column_name: examen_realise_moca
+          column_index: 47
+          description: "MoCA administered at this visit (1=Yes, 0=No)"
+      columns:
+        - {column_name: trail_moca,         column_index:  49, description: "MoCA trail-making alternation (visuospatial/executive)", range: [0, 1]}
+        - {column_name: cube_moca,          column_index:  50, description: "MoCA visuoconstructional skill — cube copy", range: [0, 1]}
+        - {column_name: clock_moca,         column_index:  51, description: "MoCA visuoconstructional skill — clock drawing (contour, numbers, hands)", range: [0, 3]}
+        - {column_name: naming_moca,        column_index:  52, description: "MoCA confrontation naming — 3 animal drawings", range: [0, 3]}
+        - {column_name: digits_moca,        column_index:  53, description: "MoCA attention — forward and backward digit span", range: [0, 2]}
+        - {column_name: letters_moca,       column_index:  54, description: "MoCA attention — sustained attention letter-tapping", range: [0, 1]}
+        - {column_name: substraction_moca,  column_index:  55, description: "MoCA attention — serial 7 subtraction (3 points)", range: [0, 3]}
+        - {column_name: repeat_moca,        column_index:  56, description: "MoCA language — sentence repetition (2 sentences)", range: [0, 2]}
+        - {column_name: fluency_moca,       column_index:  57, description: "MoCA language — letter fluency (F-words in 1 minute, ≥11 = pass)", range: [0, 1]}
+        - {column_name: abstraction_moca,   column_index:  58, description: "MoCA abstraction — verbal similarities (2 pairs)", range: [0, 2]}
+        - {column_name: recall_memory_moca, column_index:  59, description: "MoCA delayed recall — 5-word free recall", range: [0, 5]}
+        - {column_name: orientation_moca,   column_index:  60, description: "MoCA orientation — date, month, year, day, place, city", range: [0, 6]}
+        - {column_name: scolarite_moca,     column_index:  61, description: "MoCA education correction — add 1 point if ≤12 years of schooling", range: [0, 1]}
+        - {column_name: total_moca,         column_index:  62, description: "MoCA total score (calculated sum)", range: [0, 30]}
+        - {column_name: f_moca_fluences,    column_index: 246, description: "Raw count of F-words produced in MoCA fluency task (used to derive fluency_moca)", range: [0, null]}
+      missing_values: ["", NaN]
+
+    # ── MMSE ──────────────────────────────────────────────────────────────────
+    mmse:
+      assessment_name: "Mini-Mental State Examination (MMSE)"
+      neurobagel_term: "nb:Assessment"
+      assessment_term_url: "snomed:273617009"  # verify: SNOMED for MMSE
+      sheet: Neuropsy
+      admin_flags:
+        - column_name: examen_realise_mmse
+          column_index: 8
+          description: "MMSE administered at this visit (1=Yes, 0=No)"
+      columns:
+        # Orientation items (mms1–mms10)
+        - {column_name: mms1,  column_index: 10, description: "MMSE orientation item 1 — current year",     range: [0, 1]}
+        - {column_name: mms2,  column_index: 11, description: "MMSE orientation item 2 — current season",   range: [0, 1]}
+        - {column_name: mms3,  column_index: 12, description: "MMSE orientation item 3 — current month",    range: [0, 1]}
+        - {column_name: mms4,  column_index: 13, description: "MMSE orientation item 4 — today's date",     range: [0, 1]}
+        - {column_name: mms5,  column_index: 14, description: "MMSE orientation item 5 — day of week",      range: [0, 1]}
+        - {column_name: mms6,  column_index: 15, description: "MMSE orientation item 6 — country",          range: [0, 1]}
+        - {column_name: mms7,  column_index: 16, description: "MMSE orientation item 7 — department/region",range: [0, 1]}
+        - {column_name: mms8,  column_index: 17, description: "MMSE orientation item 8 — city/town",        range: [0, 1]}
+        - {column_name: mms9,  column_index: 18, description: "MMSE orientation item 9 — place/building",   range: [0, 1]}
+        - {column_name: mms10, column_index: 19, description: "MMSE orientation item 10 — floor",           range: [0, 1]}
+        # Registration items (mms11–mms13)
+        - {column_name: mms11, column_index: 21, description: "MMSE registration — word 1", range: [0, 1]}
+        - {column_name: mms12, column_index: 22, description: "MMSE registration — word 2", range: [0, 1]}
+        - {column_name: mms13, column_index: 23, description: "MMSE registration — word 3", range: [0, 1]}
+        # Attention / calculation (mms14–mms18: serial 7s)
+        - {column_name: mms14, column_index: 25, description: "MMSE attention/calculation — serial 7, step 1 (100-7=93)", range: [0, 1]}
+        - {column_name: mms15, column_index: 26, description: "MMSE attention/calculation — serial 7, step 2 (93-7=86)",  range: [0, 1]}
+        - {column_name: mms16, column_index: 27, description: "MMSE attention/calculation — serial 7, step 3 (86-7=79)",  range: [0, 1]}
+        - {column_name: mms17, column_index: 28, description: "MMSE attention/calculation — serial 7, step 4 (79-7=72)",  range: [0, 1]}
+        - {column_name: mms18, column_index: 29, description: "MMSE attention/calculation — serial 7, step 5 (72-7=65)",  range: [0, 1]}
+        # Recall items (mms19–mms21)
+        - {column_name: mms19, column_index: 31, description: "MMSE recall — word 1", range: [0, 1]}
+        - {column_name: mms20, column_index: 32, description: "MMSE recall — word 2", range: [0, 1]}
+        - {column_name: mms21, column_index: 33, description: "MMSE recall — word 3", range: [0, 1]}
+        # Language items (mms22–mms30)
+        - {column_name: mms22, column_index: 35, description: "MMSE language — naming: pencil",              range: [0, 1]}
+        - {column_name: mms23, column_index: 36, description: "MMSE language — naming: watch",               range: [0, 1]}
+        - {column_name: mms24, column_index: 37, description: "MMSE language — repetition ('No ifs, ands, or buts')", range: [0, 1]}
+        - {column_name: mms25, column_index: 38, description: "MMSE language — 3-step command (total correct steps out of 3)", range: [0, 3]}
+        - {column_name: mms26, column_index: 39, description: "MMSE language — reading and following a written command", range: [0, 1]}
+        - {column_name: mms27, column_index: 40, description: "MMSE language — writing a spontaneous sentence", range: [0, 1]}
+        - {column_name: mms28, column_index: 41, description: "MMSE language — copying two overlapping pentagons", range: [0, 1]}
+        - {column_name: mms29, column_index: 42, description: "MMSE language — additional item 29", range: [0, 1]}
+        - {column_name: mms30, column_index: 44, description: "MMSE language — additional item 30", range: [0, 1]}
+        # Calculated subscale scores
+        - {column_name: calc_mms_orient,  column_index: 20, description: "MMSE orientation subscale total (items 1–10)",          range: [0, 10]}
+        - {column_name: calc_mms_apprent, column_index: 24, description: "MMSE registration subscale total (items 11–13)",        range: [0,  3]}
+        - {column_name: calc_mms_attent,  column_index: 30, description: "MMSE attention/calculation subscale total (items 14–18)",range: [0,  5]}
+        - {column_name: calc_mms_rapp,    column_index: 34, description: "MMSE recall subscale total (items 19–21)",               range: [0,  3]}
+        - {column_name: calc_mms_lang,    column_index: 43, description: "MMSE language subscale total (items 22–30)",             range: [0,  9]}
+        - {column_name: calc_mms_tot,     column_index: 45, description: "MMSE total score (calculated sum of all subscales)",     range: [0, 30]}
+      missing_values: ["", NaN]
+
+    # ── MDS-UPDRS ─────────────────────────────────────────────────────────────
+    mds_updrs:
+      assessment_name: "Movement Disorder Society Unified Parkinson's Disease Rating Scale (MDS-UPDRS)"
+      neurobagel_term: "nb:Assessment"
+      assessment_term_url: "snomed:342061000000106"
+      sheet: Motrice
+      admin_flags:
+        - column_name: examen_realise_mds_3_off
+          column_index: 42
+          description: "MDS-UPDRS Part 3 examination performed at this visit (1=Yes, 0=No)"
+      columns:
+        # ── Part 1: Non-motor experiences of daily living ──
+        - {column_name: mds_1_1,  column_index: 176, description: "MDS-UPDRS 1.1  — cognitive impairment", range: [0, 4]}
+        - {column_name: mds_1_2,  column_index: 177, description: "MDS-UPDRS 1.2  — hallucinations and psychosis", range: [0, 4]}
+        - {column_name: mds_1_3,  column_index: 178, description: "MDS-UPDRS 1.3  — depressed mood", range: [0, 4]}
+        - {column_name: mds_1_4,  column_index: 179, description: "MDS-UPDRS 1.4  — anxious mood", range: [0, 4]}
+        - {column_name: mds_1_5,  column_index: 180, description: "MDS-UPDRS 1.5  — apathy", range: [0, 4]}
+        - {column_name: mds_1_6,  column_index: 181, description: "MDS-UPDRS 1.6  — dopamine dysregulation syndrome features", range: [0, 4]}
+        - {column_name: mds_1_7,  column_index: 182, description: "MDS-UPDRS 1.7  — sleep problems", range: [0, 4]}
+        - {column_name: mds_1_8,  column_index: 183, description: "MDS-UPDRS 1.8  — daytime sleepiness", range: [0, 4]}
+        - {column_name: mds_1_9,  column_index: 184, description: "MDS-UPDRS 1.9  — pain and other sensations", range: [0, 4]}
+        - {column_name: mds_1_10, column_index: 185, description: "MDS-UPDRS 1.10 — urinary problems", range: [0, 4]}
+        - {column_name: mds_1_11, column_index: 186, description: "MDS-UPDRS 1.11 — constipation problems", range: [0, 4]}
+        - {column_name: mds_1_12, column_index: 187, description: "MDS-UPDRS 1.12 — light-headedness on standing", range: [0, 4]}
+        - {column_name: mds_1_13, column_index: 188, description: "MDS-UPDRS 1.13 — fatigue", range: [0, 4]}
+        # ── Part 2: Motor aspects of experiences of daily living ──
+        - {column_name: mds_2_1,  column_index: 190, description: "MDS-UPDRS 2.1  — speech", range: [0, 4]}
+        - {column_name: mds_2_2,  column_index: 191, description: "MDS-UPDRS 2.2  — saliva and drooling", range: [0, 4]}
+        - {column_name: mds_2_3,  column_index: 192, description: "MDS-UPDRS 2.3  — chewing and swallowing", range: [0, 4]}
+        - {column_name: mds_2_4,  column_index: 193, description: "MDS-UPDRS 2.4  — eating tasks", range: [0, 4]}
+        - {column_name: mds_2_5,  column_index: 194, description: "MDS-UPDRS 2.5  — dressing", range: [0, 4]}
+        - {column_name: mds_2_6,  column_index: 195, description: "MDS-UPDRS 2.6  — hygiene", range: [0, 4]}
+        - {column_name: mds_2_7,  column_index: 196, description: "MDS-UPDRS 2.7  — handwriting", range: [0, 4]}
+        - {column_name: mds_2_8,  column_index: 197, description: "MDS-UPDRS 2.8  — doing hobbies and other activities", range: [0, 4]}
+        - {column_name: mds_2_9,  column_index: 198, description: "MDS-UPDRS 2.9  — turning in bed", range: [0, 4]}
+        - {column_name: mds_2_10, column_index: 199, description: "MDS-UPDRS 2.10 — tremor", range: [0, 4]}
+        - {column_name: mds_2_11, column_index: 200, description: "MDS-UPDRS 2.11 — getting out of bed, car, or deep chair", range: [0, 4]}
+        - {column_name: mds_2_12, column_index: 201, description: "MDS-UPDRS 2.12 — walking and balance", range: [0, 4]}
+        - {column_name: mds_2_13, column_index: 202, description: "MDS-UPDRS 2.13 — freezing", range: [0, 4]}
+        # ── Part 3: Motor examination — OFF state ──
+        - {column_name: mds_3_1_off,    column_index:  52, description: "MDS-UPDRS 3.1  OFF — speech", range: [0, 4]}
+        - {column_name: mds_3_2_off,    column_index:  53, description: "MDS-UPDRS 3.2  OFF — facial expression", range: [0, 4]}
+        - {column_name: mds_3_3_1_off,  column_index:  54, description: "MDS-UPDRS 3.3a OFF — rigidity: neck", range: [0, 4]}
+        - {column_name: mds_3_3_2_off,  column_index:  55, description: "MDS-UPDRS 3.3b OFF — rigidity: right upper extremity", range: [0, 4]}
+        - {column_name: mds_3_3_3_off,  column_index:  56, description: "MDS-UPDRS 3.3c OFF — rigidity: left upper extremity", range: [0, 4]}
+        - {column_name: mds_3_3_4_off,  column_index:  57, description: "MDS-UPDRS 3.3d OFF — rigidity: right lower extremity", range: [0, 4]}
+        - {column_name: mds_3_3_5_off,  column_index:  58, description: "MDS-UPDRS 3.3e OFF — rigidity: left lower extremity", range: [0, 4]}
+        - {column_name: mds_3_4_1_off,  column_index:  59, description: "MDS-UPDRS 3.4a OFF — finger tapping: right hand", range: [0, 4]}
+        - {column_name: mds_3_4_2_off,  column_index:  60, description: "MDS-UPDRS 3.4b OFF — finger tapping: left hand", range: [0, 4]}
+        - {column_name: mds_3_5_1_off,  column_index:  61, description: "MDS-UPDRS 3.5a OFF — hand movements: right", range: [0, 4]}
+        - {column_name: mds_3_5_2_off,  column_index:  62, description: "MDS-UPDRS 3.5b OFF — hand movements: left", range: [0, 4]}
+        - {column_name: mds_3_6_1_off,  column_index:  63, description: "MDS-UPDRS 3.6a OFF — pronation-supination: right hand", range: [0, 4]}
+        - {column_name: mds_3_6_2_off,  column_index:  64, description: "MDS-UPDRS 3.6b OFF — pronation-supination: left hand", range: [0, 4]}
+        - {column_name: mds_3_7_1_off,  column_index:  65, description: "MDS-UPDRS 3.7a OFF — toe tapping: right foot", range: [0, 4]}
+        - {column_name: mds_3_7_2_off,  column_index:  66, description: "MDS-UPDRS 3.7b OFF — toe tapping: left foot", range: [0, 4]}
+        - {column_name: mds_3_8_1_off,  column_index:  67, description: "MDS-UPDRS 3.8a OFF — leg agility: right leg", range: [0, 4]}
+        - {column_name: mds_3_8_2_off,  column_index:  68, description: "MDS-UPDRS 3.8b OFF — leg agility: left leg", range: [0, 4]}
+        - {column_name: mds_3_9_off,    column_index:  69, description: "MDS-UPDRS 3.9  OFF — arising from chair", range: [0, 4]}
+        - {column_name: mds_3_10_off,   column_index:  70, description: "MDS-UPDRS 3.10 OFF — gait", range: [0, 4]}
+        - {column_name: mds_3_11_off,   column_index:  71, description: "MDS-UPDRS 3.11 OFF — freezing of gait", range: [0, 4]}
+        - {column_name: mds_3_12_off,   column_index:  72, description: "MDS-UPDRS 3.12 OFF — postural stability (pull test)", range: [0, 4]}
+        - {column_name: mds_3_13_off,   column_index:  73, description: "MDS-UPDRS 3.13 OFF — posture", range: [0, 4]}
+        - {column_name: mds_3_14_off,   column_index:  74, description: "MDS-UPDRS 3.14 OFF — global spontaneity of movement (body bradykinesia)", range: [0, 4]}
+        - {column_name: mds_3_15_1_off, column_index:  75, description: "MDS-UPDRS 3.15a OFF — postural tremor: right hand", range: [0, 4]}
+        - {column_name: mds_3_15_2_off, column_index:  76, description: "MDS-UPDRS 3.15b OFF — postural tremor: left hand", range: [0, 4]}
+        - {column_name: mds_3_16_1_off, column_index:  77, description: "MDS-UPDRS 3.16a OFF — kinetic tremor: right hand", range: [0, 4]}
+        - {column_name: mds_3_16_2_off, column_index:  78, description: "MDS-UPDRS 3.16b OFF — kinetic tremor: left hand", range: [0, 4]}
+        - {column_name: mds_3_17_1_off, column_index:  79, description: "MDS-UPDRS 3.17a OFF — rest tremor amplitude: right upper extremity (RUE)", range: [0, 4]}
+        - {column_name: mds_3_17_2_off, column_index:  80, description: "MDS-UPDRS 3.17b OFF — rest tremor amplitude: left upper extremity (LUE)", range: [0, 4]}
+        - {column_name: mds_3_17_3_off, column_index:  81, description: "MDS-UPDRS 3.17c OFF — rest tremor amplitude: right lower extremity (RLE)", range: [0, 4]}
+        - {column_name: mds_3_17_4_off, column_index:  82, description: "MDS-UPDRS 3.17d OFF — rest tremor amplitude: left lower extremity (LLE)", range: [0, 4]}
+        - {column_name: mds_3_17_5_off, column_index:  83, description: "MDS-UPDRS 3.17e OFF — rest tremor amplitude: lip/jaw", range: [0, 4]}
+        - {column_name: mds_3_18_off,   column_index:  84, description: "MDS-UPDRS 3.18 OFF — constancy of rest tremor", range: [0, 4]}
+        # Part 3 OFF computed subscores
+        - {column_name: mds_3a_off,     column_index:  48, description: "MDS-UPDRS Part 3 OFF — rest tremor subscore (sum of 3.17 items)", range: [0, null]}
+        - {column_name: mds_3b_off,     column_index:  49, description: "MDS-UPDRS Part 3 OFF — action/postural tremor subscore (3.15+3.16)", range: [0, null]}
+        - {column_name: mds_3c_off,     column_index:  50, description: "MDS-UPDRS Part 3 OFF — rigidity subscore (sum of 3.3 items)", range: [0, null]}
+        - {column_name: mds_3c_1_off,   column_index:  51, description: "MDS-UPDRS Part 3 OFF — neck rigidity (item 3.3a subscore)", range: [0, null]}
+        - {column_name: mds_3a_dysk_off,column_index:  85, description: "MDS-UPDRS 3 OFF — dyskinesias present during examination (binary)", range: [0, 1]}
+        - {column_name: mds_3b_dysk_off,column_index:  86, description: "MDS-UPDRS 3 OFF — dyskinesias interfered with rating (binary)", range: [0, 1]}
+        # ── Part 3: Motor examination — ON state ──
+        - {column_name: mds_3_1_on,    column_index: 234, description: "MDS-UPDRS 3.1  ON — speech", range: [0, 4]}
+        - {column_name: mds_3_2_on,    column_index: 235, description: "MDS-UPDRS 3.2  ON — facial expression", range: [0, 4]}
+        - {column_name: mds_3_3_1_on,  column_index: 236, description: "MDS-UPDRS 3.3a ON — rigidity: neck", range: [0, 4]}
+        - {column_name: mds_3_3_2_on,  column_index: 237, description: "MDS-UPDRS 3.3b ON — rigidity: right upper extremity", range: [0, 4]}
+        - {column_name: mds_3_3_3_on,  column_index: 238, description: "MDS-UPDRS 3.3c ON — rigidity: left upper extremity", range: [0, 4]}
+        - {column_name: mds_3_3_4_on,  column_index: 239, description: "MDS-UPDRS 3.3d ON — rigidity: right lower extremity", range: [0, 4]}
+        - {column_name: mds_3_3_5_on,  column_index: 240, description: "MDS-UPDRS 3.3e ON — rigidity: left lower extremity", range: [0, 4]}
+        - {column_name: mds_3_4_1_on,  column_index: 241, description: "MDS-UPDRS 3.4a ON — finger tapping: right hand", range: [0, 4]}
+        - {column_name: mds_3_4_2_on,  column_index: 242, description: "MDS-UPDRS 3.4b ON — finger tapping: left hand", range: [0, 4]}
+        - {column_name: mds_3_5_1_on,  column_index: 243, description: "MDS-UPDRS 3.5a ON — hand movements: right", range: [0, 4]}
+        - {column_name: mds_3_5_2_on,  column_index: 244, description: "MDS-UPDRS 3.5b ON — hand movements: left", range: [0, 4]}
+        - {column_name: mds_3_6_1_on,  column_index: 245, description: "MDS-UPDRS 3.6a ON — pronation-supination: right hand", range: [0, 4]}
+        - {column_name: mds_3_6_2_on,  column_index: 246, description: "MDS-UPDRS 3.6b ON — pronation-supination: left hand", range: [0, 4]}
+        - {column_name: mds_3_7_1_on,  column_index: 247, description: "MDS-UPDRS 3.7a ON — toe tapping: right foot", range: [0, 4]}
+        - {column_name: mds_3_7_2_on,  column_index: 248, description: "MDS-UPDRS 3.7b ON — toe tapping: left foot", range: [0, 4]}
+        - {column_name: mds_3_8_1_on,  column_index: 249, description: "MDS-UPDRS 3.8a ON — leg agility: right leg", range: [0, 4]}
+        - {column_name: mds_3_8_2_on,  column_index: 250, description: "MDS-UPDRS 3.8b ON — leg agility: left leg", range: [0, 4]}
+        - {column_name: mds_3_9_on,    column_index: 251, description: "MDS-UPDRS 3.9  ON — arising from chair", range: [0, 4]}
+        - {column_name: mds_3_10_on,   column_index: 252, description: "MDS-UPDRS 3.10 ON — gait", range: [0, 4]}
+        - {column_name: mds_3_11_on,   column_index: 253, description: "MDS-UPDRS 3.11 ON — freezing of gait", range: [0, 4]}
+        - {column_name: mds_3_12_on,   column_index: 254, description: "MDS-UPDRS 3.12 ON — postural stability (pull test)", range: [0, 4]}
+        - {column_name: mds_3_13_on,   column_index: 255, description: "MDS-UPDRS 3.13 ON — posture", range: [0, 4]}
+        - {column_name: mds_3_14_on,   column_index: 256, description: "MDS-UPDRS 3.14 ON — global spontaneity of movement (body bradykinesia)", range: [0, 4]}
+        - {column_name: mds_3_15_1_on, column_index: 257, description: "MDS-UPDRS 3.15a ON — postural tremor: right hand", range: [0, 4]}
+        - {column_name: mds_3_15_2_on, column_index: 258, description: "MDS-UPDRS 3.15b ON — postural tremor: left hand", range: [0, 4]}
+        - {column_name: mds_3_16_1_on, column_index: 259, description: "MDS-UPDRS 3.16a ON — kinetic tremor: right hand", range: [0, 4]}
+        - {column_name: mds_3_16_2_on, column_index: 260, description: "MDS-UPDRS 3.16b ON — kinetic tremor: left hand", range: [0, 4]}
+        - {column_name: mds_3_17_1_on, column_index: 261, description: "MDS-UPDRS 3.17a ON — rest tremor amplitude: right upper extremity (RUE)", range: [0, 4]}
+        - {column_name: mds_3_17_2_on, column_index: 262, description: "MDS-UPDRS 3.17b ON — rest tremor amplitude: left upper extremity (LUE)", range: [0, 4]}
+        - {column_name: mds_3_17_3_on, column_index: 263, description: "MDS-UPDRS 3.17c ON — rest tremor amplitude: right lower extremity (RLE)", range: [0, 4]}
+        - {column_name: mds_3_17_4_on, column_index: 264, description: "MDS-UPDRS 3.17d ON — rest tremor amplitude: left lower extremity (LLE)", range: [0, 4]}
+        - {column_name: mds_3_17_5_on, column_index: 265, description: "MDS-UPDRS 3.17e ON — rest tremor amplitude: lip/jaw", range: [0, 4]}
+        - {column_name: mds_3_18_on,   column_index: 266, description: "MDS-UPDRS 3.18 ON — constancy of rest tremor", range: [0, 4]}
+        # Part 3 ON computed subscores
+        - {column_name: mds_3a_on,     column_index: 230, description: "MDS-UPDRS Part 3 ON — rest tremor subscore", range: [0, null]}
+        - {column_name: mds_3b_on,     column_index: 231, description: "MDS-UPDRS Part 3 ON — action/postural tremor subscore", range: [0, null]}
+        - {column_name: mds_3c_on,     column_index: 232, description: "MDS-UPDRS Part 3 ON — rigidity subscore", range: [0, null]}
+        - {column_name: mds_3c_1_on,   column_index: 233, description: "MDS-UPDRS Part 3 ON — neck rigidity (item 3.3a subscore)", range: [0, null]}
+        - {column_name: mds_3a_dysk_on,column_index: 267, description: "MDS-UPDRS 3 ON — dyskinesias present during examination (binary)", range: [0, 1]}
+        - {column_name: mds_3b_dysk_on,column_index: 268, description: "MDS-UPDRS 3 ON — dyskinesias interfered with rating (binary)", range: [0, 1]}
+        # ── Part 4: Motor complications ──
+        - {column_name: mds_4_1, column_index: 204, description: "MDS-UPDRS 4.1 — time spent with dyskinesias", range: [0, 4]}
+        - {column_name: mds_4_2, column_index: 205, description: "MDS-UPDRS 4.2 — functional impact of dyskinesias", range: [0, 4]}
+        - {column_name: mds_4_3, column_index: 206, description: "MDS-UPDRS 4.3 — time spent in OFF state", range: [0, 4]}
+        - {column_name: mds_4_4, column_index: 207, description: "MDS-UPDRS 4.4 — functional impact of fluctuations", range: [0, 4]}
+        - {column_name: mds_4_5, column_index: 208, description: "MDS-UPDRS 4.5 — complexity of motor fluctuations", range: [0, 4]}
+        - {column_name: mds_4_6, column_index: 209, description: "MDS-UPDRS 4.6 — painful OFF-state dystonias", range: [0, 4]}
+      missing_values: ["", NaN]
+
+    # ── Mattis DRS ────────────────────────────────────────────────────────────
+    mattis:
+      assessment_name: "Mattis Dementia Rating Scale (DRS-2)"
+      neurobagel_term: "nb:Assessment"
+      assessment_term_url: "TBD — needs SNOMED or NLX term lookup for Mattis DRS-2"
+      sheet: Neuropsy
+      admin_flags:
+        - column_name: examen_realise_mattis
+          column_index: 64
+          description: "Mattis DRS administered at this visit (1=Yes, 0=No)"
+      columns:
+        - {column_name: mattis_att_verb,  column_index: 163, description: "Mattis attention subscale — verbal attention items", range: [0, null]}
+        - {column_name: mattis_att_vis,   column_index: 165, description: "Mattis attention subscale — visual attention items", range: [0, null]}
+        - {column_name: mattis_att,       column_index: 167, description: "Mattis attention subscale total score", range: [0, 37]}
+        - {column_name: mattis_init_verb, column_index: 169, description: "Mattis initiation/perseveration subscale — verbal items", range: [0, null]}
+        - {column_name: mattis_init_motr, column_index: 171, description: "Mattis initiation/perseveration subscale — motor items", range: [0, null]}
+        - {column_name: mattis_init,      column_index: 173, description: "Mattis initiation/perseveration subscale total score", range: [0, 37]}
+        - {column_name: mattis_const,     column_index: 175, description: "Mattis construction subscale total score", range: [0, 6]}
+        - {column_name: mattis_conc,      column_index: 177, description: "Mattis conceptualization subscale total score", range: [0, 39]}
+        - {column_name: mattis_orient,    column_index: 179, description: "Mattis orientation subscale total score", range: [0, 6]}
+        - {column_name: mattis_mem_rappel,column_index: 180, description: "Mattis memory subscale — free recall component", range: [0, null]}
+        - {column_name: mattis_mem_reconn,column_index: 181, description: "Mattis memory subscale — recognition component", range: [0, null]}
+        - {column_name: mattis_mem_tot,   column_index: 182, description: "Mattis memory subscale total score", range: [0, 25]}
+        - {column_name: mattis_tot,       column_index: 184, description: "Mattis DRS total score", range: [0, 144]}
+        - {column_name: mattis_tot_max,   column_index: 185, description: "Mattis DRS maximum possible score for this administration (typically 144)", range: [0, 144]}
+      missing_values: ["", NaN]
+
+    # ── FAB ───────────────────────────────────────────────────────────────────
+    fab:
+      assessment_name: "Frontal Assessment Battery (FAB)"
+      neurobagel_term: "nb:Assessment"
+      assessment_term_url: "TBD — needs SNOMED or NLX term lookup for FAB"
+      sheet: Neuropsy
+      note: >
+        No binary examen_realise_fab flag found in the Dictionnaire.
+        Use fab_non_raison (text) as the exclusion indicator.
+        Column ordering in the sheet is fab_1, fab_2, fab_6, fab_3, fab_4, fab_5
+        (fab_6 is stored before fab_3–fab_5 due to REDCap form ordering).
+      admin_flags:
+        - column_name: fab_non_raison
+          column_index: 225
+          description: "Reason FAB was not administered (free text)"
+      columns:
+        - {column_name: fab_1,   column_index: 226, description: "FAB item 1 — conceptualization: similarities", range: [0, 3]}
+        - {column_name: fab_2,   column_index: 227, description: "FAB item 2 — mental flexibility: Luria sequences (alternating series)", range: [0, 3]}
+        - {column_name: fab_6,   column_index: 228, description: "FAB item 6 — environmental autonomy: prehension behavior", range: [0, 3]}
+        - {column_name: fab_3,   column_index: 229, description: "FAB item 3 — motor programming: Luria fist-edge-palm", range: [0, 3]}
+        - {column_name: fab_4,   column_index: 230, description: "FAB item 4 — sensitivity to interference: conflicting instructions", range: [0, 3]}
+        - {column_name: fab_5,   column_index: 231, description: "FAB item 5 — inhibitory control: Go/No-Go", range: [0, 3]}
+        - {column_name: fab_tot, column_index: 232, description: "FAB total score (calculated sum of items 1–6)", range: [0, 18]}
+      missing_values: ["", NaN]
+
+    # ── SCOPA-AUT ─────────────────────────────────────────────────────────────
+    scopa_aut:
+      assessment_name: "Scales for Outcomes in Parkinson's disease — Autonomic (SCOPA-AUT)"
+      neurobagel_term: "nb:Assessment"
+      assessment_term_url: "TBD — needs SNOMED or NLX term lookup for SCOPA-AUT"
+      sheet: Non motrice
+      admin_flags:
+        - column_name: examen_realise_scopa
+          column_index: 8
+          description: "SCOPA-AUT administered at this visit (1=Yes, 0=No)"
+      columns:
+        # Gastrointestinal domain
+        - {column_name: scop_aval,      column_index: 10, description: "SCOPA-AUT GI 1 — difficulty swallowing or choking", range: [0, 3]}
+        - {column_name: scop_saliv,     column_index: 11, description: "SCOPA-AUT GI 2 — dribbling of saliva", range: [0, 3]}
+        - {column_name: scop_dysph,     column_index: 12, description: "SCOPA-AUT GI 3 — swallowing causing choking", range: [0, 3]}
+        - {column_name: scop_rassas,    column_index: 13, description: "SCOPA-AUT GI 4 — feeling full quickly when eating", range: [0, 3]}
+        - {column_name: scop_constip,   column_index: 14, description: "SCOPA-AUT GI 5 — constipation", range: [0, 3]}
+        - {column_name: scop_sell,      column_index: 15, description: "SCOPA-AUT GI 6 — difficulty defecating", range: [0, 3]}
+        - {column_name: scop_incont_fec,column_index: 16, description: "SCOPA-AUT GI 7 — fecal incontinence", range: [0, 3]}
+        - {column_name: scop_scgastro,  column_index: 17, description: "SCOPA-AUT gastrointestinal subscale total (items GI 1–7)", range: [0, 21]}
+        # Urinary domain
+        - {column_name: scop_imper,      column_index: 21, description: "SCOPA-AUT UR 1 — urinary urgency", range: [0, 3]}
+        - {column_name: scop_incont_urin,column_index: 22, description: "SCOPA-AUT UR 2 — urinary incontinence", range: [0, 3]}
+        - {column_name: scop_vessie,     column_index: 23, description: "SCOPA-AUT UR 3 — incomplete bladder emptying", range: [0, 3]}
+        - {column_name: scop_dysur,      column_index: 24, description: "SCOPA-AUT UR 4 — difficulty initiating micturition", range: [0, 3]}
+        - {column_name: scop_freq,       column_index: 25, description: "SCOPA-AUT UR 5 — urinary frequency daytime", range: [0, 3]}
+        - {column_name: scop_noct,       column_index: 26, description: "SCOPA-AUT UR 6 — nocturia", range: [0, 3]}
+        - {column_name: scop_scurin,     column_index: 27, description: "SCOPA-AUT urinary subscale total (items UR 1–6)", range: [0, 18]}
+        # Cardiovascular domain
+        - {column_name: scop_etourd_lev, column_index: 28, description: "SCOPA-AUT CV 1 — dizziness when standing up", range: [0, 3]}
+        - {column_name: scop_etourd_deb, column_index: 29, description: "SCOPA-AUT CV 2 — dizziness when standing for a long time", range: [0, 3]}
+        - {column_name: scop_syncop,     column_index: 30, description: "SCOPA-AUT CV 3 — fainting/syncope", range: [0, 3]}
+        - {column_name: scop_sc_cv,      column_index: 36, description: "SCOPA-AUT cardiovascular subscale total (items CV 1–3)", range: [0, 9]}
+        # Thermoregulatory domain
+        - {column_name: scop_transp_diurn,column_index: 31, description: "SCOPA-AUT TH 1 — excessive daytime sweating", range: [0, 3]}
+        - {column_name: scop_transp_noct, column_index: 32, description: "SCOPA-AUT TH 2 — excessive nighttime sweating", range: [0, 3]}
+        - {column_name: scop_ebloui,      column_index: 33, description: "SCOPA-AUT TH 3 — dazzled by bright light", range: [0, 3]}
+        - {column_name: scop_intol_froid, column_index: 34, description: "SCOPA-AUT TH 4 — intolerance to cold", range: [0, 3]}
+        - {column_name: scop_intol_chaud, column_index: 35, description: "SCOPA-AUT TH 5 — intolerance to heat", range: [0, 3]}
+        - {column_name: scop_sc_thermo,   column_index: 37, description: "SCOPA-AUT thermoregulatory subscale total (items TH 1–5)", range: [0, 15]}
+        # Sexual domain (sex-specific items)
+        - {column_name: scop_erect,    column_index: 38, description: "SCOPA-AUT SE 1 — problems with erection (male only)", range: [0, 3]}
+        - {column_name: scop_ejac,     column_index: 39, description: "SCOPA-AUT SE 2 — problems with ejaculation (male only)", range: [0, 3]}
+        - {column_name: scop_sechvag,  column_index: 40, description: "SCOPA-AUT SE 3 — vaginal dryness (female only)", range: [0, 3]}
+        - {column_name: scop_orgasm,   column_index: 41, description: "SCOPA-AUT SE 4 — difficulty reaching orgasm", range: [0, 3]}
+        - {column_name: scop_sc_sex_h, column_index: 44, description: "SCOPA-AUT sexual subscale total (male version)", range: [0, 9]}
+        - {column_name: scop_sc_sex_f, column_index: 45, description: "SCOPA-AUT sexual subscale total (female version)", range: [0, 9]}
+        # Total score
+        - {column_name: scop_sc_tot,   column_index: 46, description: "SCOPA-AUT total score across all domains", range: [0, 69]}
+      missing_values: ["", NaN]
+
+    # ── NMSS ──────────────────────────────────────────────────────────────────
+    nmss:
+      assessment_name: "Non-Motor Symptoms Scale — Screening Version (NMSS)"
+      neurobagel_term: "nb:Assessment"
+      assessment_term_url: "TBD — needs SNOMED or NLX term lookup for NMSS"
+      sheet: Non motrice
+      note: >
+        IMPORTANT: The NMSS items in this dataset are binary (0=No, 1=Yes),
+        not the standard frequency × severity scoring (which gives a 0–12 range
+        per item). This is a simplified presence/absence screening version.
+        The total score (calc_sc_nmss) is therefore a simple count of positive
+        items (range 0–30), not the standard 0–360 weighted total.
+      admin_flags:
+        - column_name: examen_realise_nmss
+          column_index: 56
+          description: "NMSS administered at this visit (1=Yes, 0=No)"
+      columns:
+        - {column_name: nmss_1,  column_index:  58, description: "NMSS item 1  — daytime drooling of saliva",                                          range: [0, 1]}
+        - {column_name: nmss_2,  column_index:  59, description: "NMSS item 2  — loss or change in sense of smell or taste",                            range: [0, 1]}
+        - {column_name: nmss_3,  column_index:  60, description: "NMSS item 3  — difficulty swallowing food/drinks, or choking",                        range: [0, 1]}
+        - {column_name: nmss_4,  column_index:  61, description: "NMSS item 4  — nausea or vomiting",                                                   range: [0, 1]}
+        - {column_name: nmss_5,  column_index:  62, description: "NMSS item 5  — constipation (fewer than 3 stools/week) or impaction",                 range: [0, 1]}
+        - {column_name: nmss_6,  column_index:  63, description: "NMSS item 6  — fecal incontinence (not knowing stools are passing)",                  range: [0, 1]}
+        - {column_name: nmss_7,  column_index:  64, description: "NMSS item 7  — feeling bladder does not empty completely after urination",             range: [0, 1]}
+        - {column_name: nmss_8,  column_index:  65, description: "NMSS item 8  — urinary urgency (difficulty controlling urination)",                    range: [0, 1]}
+        - {column_name: nmss_9,  column_index:  66, description: "NMSS item 9  — getting up regularly at night to urinate",                             range: [0, 1]}
+        - {column_name: nmss_10, column_index:  67, description: "NMSS item 10 — pain not related to other causes such as arthritis",                   range: [0, 1]}
+        - {column_name: nmss_11, column_index:  68, description: "NMSS item 11 — unexplained weight change (not due to diet)",                          range: [0, 1]}
+        - {column_name: nmss_12, column_index:  69, description: "NMSS item 12 — problems remembering recent events or forgetting tasks",               range: [0, 1]}
+        - {column_name: nmss_13, column_index:  70, description: "NMSS item 13 — loss of interest in surroundings or doing things (apathy)",            range: [0, 1]}
+        - {column_name: nmss_14, column_index:  71, description: "NMSS item 14 — seeing things or people not actually present (visual hallucinations)",  range: [0, 1]}
+        - {column_name: nmss_15, column_index:  72, description: "NMSS item 15 — difficulty concentrating or staying attentive",                        range: [0, 1]}
+        - {column_name: nmss_16, column_index:  73, description: "NMSS item 16 — feeling sad, down, or melancholic",                                    range: [0, 1]}
+        - {column_name: nmss_17, column_index:  74, description: "NMSS item 17 — feeling anxious, worried, or panicked",                               range: [0, 1]}
+        - {column_name: nmss_18, column_index:  75, description: "NMSS item 18 — decreased or increased interest in sex",                               range: [0, 1]}
+        - {column_name: nmss_19, column_index:  76, description: "NMSS item 19 — sexual difficulties when wanting to have sex",                         range: [0, 1]}
+        - {column_name: nmss_20, column_index:  77, description: "NMSS item 20 — dizziness when rising from sitting or lying position",                 range: [0, 1]}
+        - {column_name: nmss_21, column_index:  78, description: "NMSS item 21 — falls",                                                                range: [0, 1]}
+        - {column_name: nmss_22, column_index:  79, description: "NMSS item 22 — difficulty staying awake during activities (driving, eating, etc.)",   range: [0, 1]}
+        - {column_name: nmss_23, column_index:  80, description: "NMSS item 23 — difficulty falling asleep or nighttime awakening",                     range: [0, 1]}
+        - {column_name: nmss_24, column_index:  81, description: "NMSS item 24 — vivid dreams or nightmares",                                           range: [0, 1]}
+        - {column_name: nmss_25, column_index:  82, description: "NMSS item 25 — talking or moving during sleep as if acting out dreams (RBD features)",range: [0, 1]}
+        - {column_name: nmss_26, column_index:  83, description: "NMSS item 26 — unpleasant sensations in legs at night or at rest (RLS features)",     range: [0, 1]}
+        - {column_name: nmss_27, column_index:  84, description: "NMSS item 27 — swelling of lower limbs (edema)",                                      range: [0, 1]}
+        - {column_name: nmss_28, column_index:  85, description: "NMSS item 28 — excessive sweating",                                                   range: [0, 1]}
+        - {column_name: nmss_29, column_index:  86, description: "NMSS item 29 — double vision",                                                        range: [0, 1]}
+        - {column_name: nmss_30, column_index:  87, description: "NMSS item 30 — believing things are happening that others deny (delusions)",          range: [0, 1]}
+        - {column_name: calc_sc_nmss, column_index: 88, description: "NMSS total screening score (count of positive items; range 0–30 in this binary version)", range: [0, 30]}
+      missing_values: ["", NaN]
+
+    # ── Epworth ───────────────────────────────────────────────────────────────
+    epworth:
+      assessment_name: "Epworth Sleepiness Scale (ESS)"
+      neurobagel_term: "nb:Assessment"
+      assessment_term_url: "TBD — needs SNOMED or NLX term lookup for ESS"
+      sheet: Non motrice
+      admin_flags:
+        - column_name: examen_realise_epworth
+          column_index: 128
+          description: "Epworth administered at this visit (1=Yes, 0=No)"
+      columns:
+        - {column_name: ep_lire,   column_index: 130, description: "Epworth item 1 — chance of dozing: sitting and reading", range: [0, 3]}
+        - {column_name: ep_tele,   column_index: 131, description: "Epworth item 2 — chance of dozing: watching TV", range: [0, 3]}
+        - {column_name: ep_public, column_index: 132, description: "Epworth item 3 — chance of dozing: sitting inactive in a public place", range: [0, 3]}
+        - {column_name: ep_transp, column_index: 133, description: "Epworth item 4 — chance of dozing: as a passenger in a car for 1 hour", range: [0, 3]}
+        - {column_name: ep_allonge,column_index: 134, description: "Epworth item 5 — chance of dozing: lying down to rest in the afternoon", range: [0, 3]}
+        - {column_name: ep_parler, column_index: 135, description: "Epworth item 6 — chance of dozing: sitting and talking to someone", range: [0, 3]}
+        - {column_name: ep_calme,  column_index: 136, description: "Epworth item 7 — chance of dozing: sitting quietly after lunch without alcohol", range: [0, 3]}
+        - {column_name: ep_voitur, column_index: 137, description: "Epworth item 8 — chance of dozing: in a car while stopped for a few minutes in traffic", range: [0, 3]}
+        - {column_name: epworth_sc,column_index: 138, description: "Epworth Sleepiness Scale total score", range: [0, 24]}
+      missing_values: ["", NaN]
+
+    # ── UPSIT ─────────────────────────────────────────────────────────────────
+    upsit:
+      assessment_name: "University of Pennsylvania Smell Identification Test (UPSIT)"
+      neurobagel_term: "nb:Assessment"
+      assessment_term_url: "TBD — needs SNOMED or NLX term lookup for UPSIT"
+      sheet: Non motrice
+      note: >
+        Subscale item-level data is not available; only the total score and
+        an olfactory diagnosis category are stored. The UPSIT total score
+        is the count of correctly identified odours out of 40.
+      admin_flags:
+        - column_name: upsit_done
+          column_index: 90
+          description: "UPSIT administered at this visit (1=Yes, 0=No)"
+      columns:
+        - column_name: upsit_sc
+          column_index: 93
+          description: "UPSIT total score — number of correctly identified odours (40-item scratch-and-sniff test)"
+          variable_type: Continuous
+          range: [0, 40]
+        - column_name: diag_olf
+          column_index: 94
+          description: "Olfactory diagnosis category derived from UPSIT score"
+          variable_type: Categorical
+          levels:
+            "1": "Normosmia (normal smell)"
+            "2": "Mild microsmia"
+            "3": "Moderate microsmia"
+            "4": "Severe microsmia"
+            "5": "Anosmia (absent smell)"
+            "6": "Probable malingering"
+          missing_values: ["", NaN]
+      missing_values: ["", NaN]
+
+# ─────────────────────────────────────────────────────────────────────────────
+# NEUROIMAGING MODALITY FLAGS
+# ─────────────────────────────────────────────────────────────────────────────
+# These columns are NOT annotatable via the Neurobagel phenotypic annotation
+# tool, but must be exported in the TSV to enable construction of a
+# Neurobagel imaging table (format: sub, ses, suffix, path).
+# Reference: https://neurobagel.org/user_guide/preparing_imaging_data/
+# Supported Neurobagel modality namespace: nidm: (http://purl.org/nidash/nidm#)
+imaging_modality_flags:
+  sheet: Imagerie
+  note: >
+    All flags are binary (1=Yes, 0=No).
+    DaTScan is a SPECT acquisition — SPECT is NOT in the Neurobagel supported
+    modality vocabulary (only PET is listed); the flag is exported for
+    completeness. irm_r2 and irm_melan have no direct Neurobagel modality
+    match and are exported as informational flags.
+  columns:
+    - column_name: irm_fait
+      column_index: 8
+      description: "MRI performed at this visit (umbrella flag — 1=any MRI acquired)"
+      neurobagel_modality: null
+      missing_values: ["", NaN]
+
+    - column_name: irm_3dt1
+      column_index: 20
+      description: "3D T1-weighted MRI acquired (labeled '3DT1' in Dictionnaire)"
+      neurobagel_modality: "nidm:T1Weighted"
+      missing_values: ["", NaN]
+
+    - column_name: irm_3dt2
+      column_index: 21
+      description: "3D FLAIR MRI acquired (T2-FLAIR; labeled '3DFLAIR' in Dictionnaire — maps to T2-weighted class)"
+      neurobagel_modality: "nidm:T2Weighted"
+      missing_values: ["", NaN]
+
+    - column_name: irm_tdif
+      column_index: 22
+      description: "Diffusion tensor imaging (DTI) acquired"
+      neurobagel_modality: "nidm:DiffusionWeighted"
+      missing_values: ["", NaN]
+
+    - column_name: irm_r2
+      column_index: 23
+      description: "R2*/T2* quantitative susceptibility mapping acquired"
+      neurobagel_modality: null
+      note: "No direct Neurobagel modality match for quantitative T2* mapping"
+      missing_values: ["", NaN]
+
+    - column_name: irm_rs
+      column_index: 24
+      description: "Resting-state fMRI (BOLD) acquired"
+      neurobagel_modality: "nidm:FlowWeighted"
+      missing_values: ["", NaN]
+
+    - column_name: irm_melan
+      column_index: 25
+      description: "Neuromelanin-sensitive MRI acquired (specialized T1-like sequence)"
+      neurobagel_modality: null
+      note: "No direct Neurobagel modality match; closest is T1Weighted but this is a specialized sequence"
+      missing_values: ["", NaN]
+
+    - column_name: datsc_real
+      column_index: 34
+      description: "DaTScan SPECT performed at this visit"
+      neurobagel_modality: null
+      note: "SPECT is NOT in Neurobagel's supported modality vocabulary (only PET is listed); export as informational flag"
+      missing_values: ["", NaN]
