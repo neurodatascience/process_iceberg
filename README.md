@@ -31,10 +31,11 @@ make
 └── README.md                             # This file
 ```
 
-Generated outputs (created by `make extract`):
+Generated outputs:
 
 ```
-iceberg_neurobagel_phenotype.tsv           # Wide TSV ready for Neurobagel annotation
+iceberg_neurobagel_phenotype.tsv           # Wide TSV ready for Neurobagel annotation  (make extract)
+iceberg_neurobagel_imaging.tsv             # Neurobagel imaging table                  (make imaging)
 ```
 
 ---
@@ -91,18 +92,37 @@ python extract_neurobagel_tsv.py --help
 
 ---
 
+### `build_imaging_table.py` — Step 2: Imaging table
+
+Reads `iceberg_neurobagel_mapping.yaml` for the flag→modality mappings and
+the phenotype TSV for the actual flag values, then writes a Neurobagel imaging
+table with one row per (subject × session × acquired modality).
+
+```bash
+make imaging
+
+# Or directly:
+python build_imaging_table.py \
+    --mapping iceberg_neurobagel_mapping.yaml \
+    --tsv     iceberg_neurobagel_phenotype.tsv \
+    --output  iceberg_neurobagel_imaging.tsv
+```
+
+**Output columns:** `sub`, `ses`, `suffix`, `path`
+
+- `sub` / `ses` — copied verbatim from `num_sujet` / `redcap_event_name` in the
+  phenotype TSV so the two tables can be linked by Neurobagel.
+- `suffix` — BIDS modality suffix derived from the `neurobagel_modality` field
+  in the YAML (`T1w`, `T2w`, `dwi`, `bold`).
+- `path` — **left empty**. You must populate this column with the actual paths
+  to the imaging files on disk before submitting the table to Neurobagel.
+
+Flags without a Neurobagel modality mapping (`irm_fait`, `irm_r2`, `irm_melan`,
+`datsc_real`) are silently skipped.
+
 ### Future scripts (planned)
 
-**`compute_age.py`** — Step 1b *(planned)*
-Adds a computed `age_at_visit` column derived from `ddn_m`, `ddn_a`, and
-`date_visite`. Required before Neurobagel annotation because `nb:Age` expects
-a numeric age value.
-
-**`build_imaging_table.py`** — Step 2 *(planned)*
-Reads the TSV output and the imaging flag columns (`irm_3dt1`, `irm_3dt2`,
-`irm_tdif`, `irm_rs`, `irm_r2`, `irm_melan`, `datsc_real`) to produce a
-Neurobagel imaging table (columns: `sub`, `ses`, `suffix`, `path`).
-See [Neurobagel imaging data docs](https://neurobagel.org/user_guide/preparing_imaging_data/).
+*(none currently)*
 
 ---
 
@@ -150,9 +170,10 @@ relative to the Dictionnaire sheet's logical ordering.
 
 | Target | Action |
 |--------|--------|
-| `make` / `make all` | Run extraction |
-| `make extract` | Run extraction script |
-| `make clean` | Remove generated TSV |
+| `make` / `make all` | Run extraction + build imaging table |
+| `make extract` | Run phenotype extraction script |
+| `make imaging` | Build Neurobagel imaging table |
+| `make clean` | Remove generated TSV files |
 | `make help` | Print available targets |
 
 Override any variable on the command line:

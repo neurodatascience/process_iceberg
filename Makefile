@@ -1,12 +1,13 @@
 PYTHON  := python3
 
-EXCEL   := 2023_04_05_Gel_Iceberg_patient1.xlsx
-MAPPING := iceberg_neurobagel_mapping.yaml
-TSV_OUT := iceberg_neurobagel_phenotype.tsv
+EXCEL       := 2023_04_05_Gel_Iceberg_patient1.xlsx
+MAPPING     := iceberg_neurobagel_mapping.yaml
+TSV_OUT     := iceberg_neurobagel_phenotype.tsv
+IMAGING_OUT := iceberg_neurobagel_imaging.tsv
 
 # ── Default target ─────────────────────────────────────────────────────────────
 .PHONY: all
-all: extract
+all: extract imaging
 
 # ── Help ───────────────────────────────────────────────────────────────────────
 .PHONY: help
@@ -14,7 +15,9 @@ help:
 	@echo ""
 	@echo "ICEBERG → Neurobagel extraction pipeline"
 	@echo ""
-	@echo "  make extract   Run extraction → $(TSV_OUT)"
+	@echo "  make extract   Run phenotype extraction → $(TSV_OUT)"
+	@echo "  make imaging   Build imaging table → $(IMAGING_OUT)"
+	@echo "  make all       extract + imaging"
 	@echo "  make clean     Remove generated output files"
 	@echo "  make help      Show this message"
 	@echo ""
@@ -33,8 +36,16 @@ extract:
 		--excel    $(EXCEL)   \
 		--output   $(TSV_OUT)
 
+# ── Imaging table ─────────────────────────────────────────────────────────────
+.PHONY: imaging
+imaging:
+	$(PYTHON) build_imaging_table.py \
+		--mapping $(MAPPING) \
+		--tsv     $(TSV_OUT) \
+		--output  $(IMAGING_OUT)
+
 # ── Clean ──────────────────────────────────────────────────────────────────────
 .PHONY: clean
 clean:
-	rm -f $(TSV_OUT)
+	rm -f $(TSV_OUT) $(IMAGING_OUT)
 	@echo "Cleaned."
