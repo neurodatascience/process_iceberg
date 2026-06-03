@@ -10,11 +10,12 @@ Parkinson's disease study) so it can be ingested into a
 ## Quick start
 
 ```bash
-make          # installs dependencies and runs the extraction
-```
+# 1. Install dependencies into your environment of choice
+pip install -r requirements.txt   # or: uv pip install -r requirements.txt
 
-The first run takes ~30 seconds to install packages into `.venv/`.
-Subsequent runs use the cached environment and are fast.
+# 2. Run the extraction
+make
+```
 
 ---
 
@@ -40,10 +41,8 @@ iceberg_neurobagel_phenotype.tsv           # Wide TSV ready for Neurobagel annot
 
 ## Requirements
 
-- **Python 3.11+**
-- **[uv](https://docs.astral.sh/uv/)** — fast Python package manager.
-  Expected at `/home/node/.local/bin/uv` or anywhere on `PATH`.
-  Install with: `curl -LsSf https://astral.sh/uv/install.sh | sh`
+- **Python 3.11+** with `pandas`, `openpyxl`, and `PyYAML` installed.
+  See `requirements.txt`.
 - The ICEBERG Excel file must be present in this directory.
 
 ---
@@ -151,10 +150,9 @@ relative to the Dictionnaire sheet's logical ordering.
 
 | Target | Action |
 |--------|--------|
-| `make` / `make all` | Install dependencies, then run extraction |
-| `make install` | Create `.venv` and install packages |
+| `make` / `make all` | Run extraction |
 | `make extract` | Run extraction script |
-| `make clean` | Remove `.venv` and generated TSV |
+| `make clean` | Remove generated TSV |
 | `make help` | Print available targets |
 
 Override any variable on the command line:

@@ -6,9 +6,9 @@ ICEBERG Excel file across multiple sheets, joins them on the composite key
 (num_sujet, redcap_event_name), and writes a single TSV ready for annotation
 with the Neurobagel annotation tool.
 
-Column values are written as-is (no transformations).  Age at visit is NOT
-pre-computed here; the output includes ddn_m, ddn_a, and date_visite so it
-can be computed downstream.
+Column values are written as-is (no transformations), with one addition:
+a `computed_age` column (float) is derived from birth month/year and visit
+date and inserted at position 2.
 
 Usage
 -----
@@ -28,7 +28,7 @@ try:
 except ImportError as exc:
     sys.exit(
         f"Missing dependency: {exc}\n"
-        "Run 'make install' to install required packages."
+        "Install with: pip install -r requirements.txt"
     )
 
 # ── Constants ─────────────────────────────────────────────────────────────────
@@ -137,6 +137,29 @@ def load_sheet(xl: pd.ExcelFile, sheet: str, columns: list) -> pd.DataFrame:
     return df[available].copy()
 
 
+def compute_age(df: pd.DataFrame) -> pd.Series:
+    """
+    Return age at each visit as a float (e.g. 30.5 = 30 years 6 months).
+
+    Birth month (ddn_m) and birth year (ddn_a) are typically only recorded
+    at the baseline visit, so they are propagated forward and backward within
+    each subject's rows before the calculation.  Rows missing a visit date or
+    birth information get NaN.
+    """
+    birth_m = df.groupby("num_sujet")["ddn_m"].transform(
+        lambda s: s.ffill().bfill()
+    )
+    birth_y = df.groupby("num_sujet")["ddn_a"].transform(
+        lambda s: s.ffill().bfill()
+    )
+    visit_date = pd.to_datetime(df["date_visite"], errors="coerce")
+    age = (
+        (visit_date.dt.year + visit_date.dt.month / 12.0)
+        - (birth_y + birth_m / 12.0)
+    )
+    return age.round(2)
+
+
 def filter_real_rows(df: pd.DataFrame) -> pd.DataFrame:
     """
     Remove filler rows that have no subject number.
@@ -220,6 +243,12 @@ def main():
             f"  +{len(new_cols)} columns  →  "
             f"result now {len(result.columns)} columns"
         )
+
+    # ── Compute age at visit ──────────────────────────────────────────────────
+    print("\nComputing age at visit...")
+    result.insert(2, "computed_age", compute_age(result))
+    n_age = result["computed_age"].notna().sum()
+    print(f"  computed_age: {n_age}/{len(result)} rows have a value")
 
     # ── Write output ──────────────────────────────────────────────────────────
     result.to_csv(output_path, sep="\t", index=False, na_rep="")
