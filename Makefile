@@ -5,6 +5,7 @@ MAPPING       := iceberg_neurobagel_mapping.yaml
 TSV_OUT       := iceberg_neurobagel_phenotype.tsv
 IMAGING_OUT   := iceberg_neurobagel_imaging.tsv
 SYNTHETIC_OUT := iceberg_neurobagel_synthetic.tsv
+DICT_OUT      := iceberg_data_dictionary.tsv
 
 # ── Default target ─────────────────────────────────────────────────────────────
 .PHONY: all
@@ -16,10 +17,11 @@ help:
 	@echo ""
 	@echo "ICEBERG → Neurobagel extraction pipeline"
 	@echo ""
-	@echo "  make extract    Run phenotype extraction → $(TSV_OUT)"
-	@echo "  make imaging    Build imaging table → $(IMAGING_OUT)"
-	@echo "  make synthetic  Generate synthetic test TSV → $(SYNTHETIC_OUT)"
-	@echo "  make all        extract + imaging"
+	@echo "  make extract     Run phenotype extraction → $(TSV_OUT)"
+	@echo "  make imaging     Build imaging table → $(IMAGING_OUT)"
+	@echo "  make synthetic   Generate synthetic test TSV → $(SYNTHETIC_OUT)"
+	@echo "  make dictionary  Generate data dictionary → $(DICT_OUT)"
+	@echo "  make all         extract + imaging"
 	@echo "  make clean     Remove generated output files"
 	@echo "  make help      Show this message"
 	@echo ""
@@ -54,8 +56,16 @@ synthetic:
 		--tsv-template $(TSV_OUT) \
 		--output       $(SYNTHETIC_OUT)
 
+# ── Data dictionary ────────────────────────────────────────────────────────────
+.PHONY: dictionary
+dictionary:
+	$(PYTHON) generate_data_dictionary.py \
+		--mapping      $(MAPPING) \
+		--tsv-template $(TSV_OUT) \
+		--output       $(DICT_OUT)
+
 # ── Clean ──────────────────────────────────────────────────────────────────────
 .PHONY: clean
 clean:
-	rm -f $(TSV_OUT) $(IMAGING_OUT) $(SYNTHETIC_OUT)
+	rm -f $(TSV_OUT) $(IMAGING_OUT) $(SYNTHETIC_OUT) $(DICT_OUT)
 	@echo "Cleaned."

@@ -1,0 +1,2674 @@
+{
+  "num_sujet": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:ParticipantID",
+        "Label": "Participant ID"
+      },
+      "VariableType": "Identifier"
+    }
+  },
+  "redcap_event_name": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:SessionID",
+        "Label": "Session ID"
+      },
+      "VariableType": "Identifier"
+    }
+  },
+  "computed_age": {
+    "Description": "",
+    "Units": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Age",
+        "Label": "Age"
+      },
+      "VariableType": "Continuous"
+    }
+  },
+  "sexe": {
+    "Description": "",
+    "Levels": {
+      "1.0": {
+        "Description": ""
+      },
+      "2.0": {
+        "Description": ""
+      },
+      "0.0": {
+        "Description": ""
+      },
+      "": {
+        "Description": ""
+      }
+    },
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Sex",
+        "Label": "Sex"
+      },
+      "VariableType": "Categorical",
+      "Levels": {
+        "1.0": {},
+        "2.0": {},
+        "0.0": {},
+        "": {}
+      }
+    }
+  },
+  "groupe": {
+    "Description": "",
+    "Levels": {
+      "1.0": {
+        "Description": ""
+      },
+      "2.0": {
+        "Description": ""
+      },
+      "3.0": {
+        "Description": ""
+      },
+      "4.0": {
+        "Description": ""
+      },
+      "5.0": {
+        "Description": ""
+      },
+      "0.0": {
+        "Description": ""
+      },
+      "": {
+        "Description": ""
+      }
+    },
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Diagnosis",
+        "Label": "Diagnosis"
+      },
+      "VariableType": "Categorical",
+      "Levels": {
+        "1.0": {},
+        "2.0": {},
+        "3.0": {},
+        "4.0": {},
+        "5.0": {},
+        "0.0": {},
+        "": {}
+      }
+    }
+  },
+  "statut_inclusion": {
+    "Description": ""
+  },
+  "ddn_m": {
+    "Description": ""
+  },
+  "ddn_a": {
+    "Description": ""
+  },
+  "date_visite": {
+    "Description": ""
+  },
+  "examen_realise_moca": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_038",
+        "Label": "Montreal Cognitive Assessment"
+      }
+    }
+  },
+  "trail_moca": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_038",
+        "Label": "Montreal Cognitive Assessment"
+      }
+    }
+  },
+  "cube_moca": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_038",
+        "Label": "Montreal Cognitive Assessment"
+      }
+    }
+  },
+  "clock_moca": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_038",
+        "Label": "Montreal Cognitive Assessment"
+      }
+    }
+  },
+  "naming_moca": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_038",
+        "Label": "Montreal Cognitive Assessment"
+      }
+    }
+  },
+  "digits_moca": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_038",
+        "Label": "Montreal Cognitive Assessment"
+      }
+    }
+  },
+  "letters_moca": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_038",
+        "Label": "Montreal Cognitive Assessment"
+      }
+    }
+  },
+  "substraction_moca": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_038",
+        "Label": "Montreal Cognitive Assessment"
+      }
+    }
+  },
+  "repeat_moca": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_038",
+        "Label": "Montreal Cognitive Assessment"
+      }
+    }
+  },
+  "fluency_moca": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_038",
+        "Label": "Montreal Cognitive Assessment"
+      }
+    }
+  },
+  "abstraction_moca": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_038",
+        "Label": "Montreal Cognitive Assessment"
+      }
+    }
+  },
+  "recall_memory_moca": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_038",
+        "Label": "Montreal Cognitive Assessment"
+      }
+    }
+  },
+  "orientation_moca": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_038",
+        "Label": "Montreal Cognitive Assessment"
+      }
+    }
+  },
+  "scolarite_moca": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_038",
+        "Label": "Montreal Cognitive Assessment"
+      }
+    }
+  },
+  "total_moca": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_038",
+        "Label": "Montreal Cognitive Assessment"
+      }
+    }
+  },
+  "f_moca_fluences": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_038",
+        "Label": "Montreal Cognitive Assessment"
+      }
+    }
+  },
+  "examen_realise_mmse": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_039",
+        "Label": "Mini-Mental State Examination"
+      }
+    }
+  },
+  "mms1": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_039",
+        "Label": "Mini-Mental State Examination"
+      }
+    }
+  },
+  "mms2": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_039",
+        "Label": "Mini-Mental State Examination"
+      }
+    }
+  },
+  "mms3": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_039",
+        "Label": "Mini-Mental State Examination"
+      }
+    }
+  },
+  "mms4": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_039",
+        "Label": "Mini-Mental State Examination"
+      }
+    }
+  },
+  "mms5": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_039",
+        "Label": "Mini-Mental State Examination"
+      }
+    }
+  },
+  "mms6": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_039",
+        "Label": "Mini-Mental State Examination"
+      }
+    }
+  },
+  "mms7": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_039",
+        "Label": "Mini-Mental State Examination"
+      }
+    }
+  },
+  "mms8": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_039",
+        "Label": "Mini-Mental State Examination"
+      }
+    }
+  },
+  "mms9": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_039",
+        "Label": "Mini-Mental State Examination"
+      }
+    }
+  },
+  "mms10": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_039",
+        "Label": "Mini-Mental State Examination"
+      }
+    }
+  },
+  "mms11": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_039",
+        "Label": "Mini-Mental State Examination"
+      }
+    }
+  },
+  "mms12": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_039",
+        "Label": "Mini-Mental State Examination"
+      }
+    }
+  },
+  "mms13": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_039",
+        "Label": "Mini-Mental State Examination"
+      }
+    }
+  },
+  "mms14": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_039",
+        "Label": "Mini-Mental State Examination"
+      }
+    }
+  },
+  "mms15": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_039",
+        "Label": "Mini-Mental State Examination"
+      }
+    }
+  },
+  "mms16": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_039",
+        "Label": "Mini-Mental State Examination"
+      }
+    }
+  },
+  "mms17": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_039",
+        "Label": "Mini-Mental State Examination"
+      }
+    }
+  },
+  "mms18": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_039",
+        "Label": "Mini-Mental State Examination"
+      }
+    }
+  },
+  "mms19": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_039",
+        "Label": "Mini-Mental State Examination"
+      }
+    }
+  },
+  "mms20": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_039",
+        "Label": "Mini-Mental State Examination"
+      }
+    }
+  },
+  "mms21": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_039",
+        "Label": "Mini-Mental State Examination"
+      }
+    }
+  },
+  "mms22": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_039",
+        "Label": "Mini-Mental State Examination"
+      }
+    }
+  },
+  "mms23": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_039",
+        "Label": "Mini-Mental State Examination"
+      }
+    }
+  },
+  "mms24": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_039",
+        "Label": "Mini-Mental State Examination"
+      }
+    }
+  },
+  "mms25": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_039",
+        "Label": "Mini-Mental State Examination"
+      }
+    }
+  },
+  "mms26": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_039",
+        "Label": "Mini-Mental State Examination"
+      }
+    }
+  },
+  "mms27": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_039",
+        "Label": "Mini-Mental State Examination"
+      }
+    }
+  },
+  "mms28": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_039",
+        "Label": "Mini-Mental State Examination"
+      }
+    }
+  },
+  "mms29": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_039",
+        "Label": "Mini-Mental State Examination"
+      }
+    }
+  },
+  "mms30": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_039",
+        "Label": "Mini-Mental State Examination"
+      }
+    }
+  },
+  "calc_mms_orient": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_039",
+        "Label": "Mini-Mental State Examination"
+      }
+    }
+  },
+  "calc_mms_apprent": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_039",
+        "Label": "Mini-Mental State Examination"
+      }
+    }
+  },
+  "calc_mms_attent": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_039",
+        "Label": "Mini-Mental State Examination"
+      }
+    }
+  },
+  "calc_mms_rapp": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_039",
+        "Label": "Mini-Mental State Examination"
+      }
+    }
+  },
+  "calc_mms_lang": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_039",
+        "Label": "Mini-Mental State Examination"
+      }
+    }
+  },
+  "calc_mms_tot": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_039",
+        "Label": "Mini-Mental State Examination"
+      }
+    }
+  },
+  "examen_realise_mattis": {
+    "Description": ""
+  },
+  "mattis_att_verb": {
+    "Description": ""
+  },
+  "mattis_att_vis": {
+    "Description": ""
+  },
+  "mattis_att": {
+    "Description": ""
+  },
+  "mattis_init_verb": {
+    "Description": ""
+  },
+  "mattis_init_motr": {
+    "Description": ""
+  },
+  "mattis_init": {
+    "Description": ""
+  },
+  "mattis_const": {
+    "Description": ""
+  },
+  "mattis_conc": {
+    "Description": ""
+  },
+  "mattis_orient": {
+    "Description": ""
+  },
+  "mattis_mem_rappel": {
+    "Description": ""
+  },
+  "mattis_mem_reconn": {
+    "Description": ""
+  },
+  "mattis_mem_tot": {
+    "Description": ""
+  },
+  "mattis_tot": {
+    "Description": ""
+  },
+  "mattis_tot_max": {
+    "Description": ""
+  },
+  "fab_non_raison": {
+    "Description": ""
+  },
+  "fab_1": {
+    "Description": ""
+  },
+  "fab_2": {
+    "Description": ""
+  },
+  "fab_6": {
+    "Description": ""
+  },
+  "fab_3": {
+    "Description": ""
+  },
+  "fab_4": {
+    "Description": ""
+  },
+  "fab_5": {
+    "Description": ""
+  },
+  "fab_tot": {
+    "Description": ""
+  },
+  "examen_realise_mds_3_off": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_048",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
+      }
+    }
+  },
+  "mds_1_1": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_046",
+        "Label": "MDS-UPDRS (Revised Version) – Part I: Non-Motor Experiences of Daily Living"
+      }
+    }
+  },
+  "mds_1_2": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_046",
+        "Label": "MDS-UPDRS (Revised Version) – Part I: Non-Motor Experiences of Daily Living"
+      }
+    }
+  },
+  "mds_1_3": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_046",
+        "Label": "MDS-UPDRS (Revised Version) – Part I: Non-Motor Experiences of Daily Living"
+      }
+    }
+  },
+  "mds_1_4": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_046",
+        "Label": "MDS-UPDRS (Revised Version) – Part I: Non-Motor Experiences of Daily Living"
+      }
+    }
+  },
+  "mds_1_5": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_046",
+        "Label": "MDS-UPDRS (Revised Version) – Part I: Non-Motor Experiences of Daily Living"
+      }
+    }
+  },
+  "mds_1_6": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_046",
+        "Label": "MDS-UPDRS (Revised Version) – Part I: Non-Motor Experiences of Daily Living"
+      }
+    }
+  },
+  "mds_1_7": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_046",
+        "Label": "MDS-UPDRS (Revised Version) – Part I: Non-Motor Experiences of Daily Living"
+      }
+    }
+  },
+  "mds_1_8": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_046",
+        "Label": "MDS-UPDRS (Revised Version) – Part I: Non-Motor Experiences of Daily Living"
+      }
+    }
+  },
+  "mds_1_9": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_046",
+        "Label": "MDS-UPDRS (Revised Version) – Part I: Non-Motor Experiences of Daily Living"
+      }
+    }
+  },
+  "mds_1_10": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_046",
+        "Label": "MDS-UPDRS (Revised Version) – Part I: Non-Motor Experiences of Daily Living"
+      }
+    }
+  },
+  "mds_1_11": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_046",
+        "Label": "MDS-UPDRS (Revised Version) – Part I: Non-Motor Experiences of Daily Living"
+      }
+    }
+  },
+  "mds_1_12": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_046",
+        "Label": "MDS-UPDRS (Revised Version) – Part I: Non-Motor Experiences of Daily Living"
+      }
+    }
+  },
+  "mds_1_13": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_046",
+        "Label": "MDS-UPDRS (Revised Version) – Part I: Non-Motor Experiences of Daily Living"
+      }
+    }
+  },
+  "mds_2_1": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_047",
+        "Label": "MDS-UPDRS (Revised Version) – Part II: Motor Experiences of Daily Living"
+      }
+    }
+  },
+  "mds_2_2": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_047",
+        "Label": "MDS-UPDRS (Revised Version) – Part II: Motor Experiences of Daily Living"
+      }
+    }
+  },
+  "mds_2_3": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_047",
+        "Label": "MDS-UPDRS (Revised Version) – Part II: Motor Experiences of Daily Living"
+      }
+    }
+  },
+  "mds_2_4": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_047",
+        "Label": "MDS-UPDRS (Revised Version) – Part II: Motor Experiences of Daily Living"
+      }
+    }
+  },
+  "mds_2_5": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_047",
+        "Label": "MDS-UPDRS (Revised Version) – Part II: Motor Experiences of Daily Living"
+      }
+    }
+  },
+  "mds_2_6": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_047",
+        "Label": "MDS-UPDRS (Revised Version) – Part II: Motor Experiences of Daily Living"
+      }
+    }
+  },
+  "mds_2_7": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_047",
+        "Label": "MDS-UPDRS (Revised Version) – Part II: Motor Experiences of Daily Living"
+      }
+    }
+  },
+  "mds_2_8": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_047",
+        "Label": "MDS-UPDRS (Revised Version) – Part II: Motor Experiences of Daily Living"
+      }
+    }
+  },
+  "mds_2_9": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_047",
+        "Label": "MDS-UPDRS (Revised Version) – Part II: Motor Experiences of Daily Living"
+      }
+    }
+  },
+  "mds_2_10": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_047",
+        "Label": "MDS-UPDRS (Revised Version) – Part II: Motor Experiences of Daily Living"
+      }
+    }
+  },
+  "mds_2_11": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_047",
+        "Label": "MDS-UPDRS (Revised Version) – Part II: Motor Experiences of Daily Living"
+      }
+    }
+  },
+  "mds_2_12": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_047",
+        "Label": "MDS-UPDRS (Revised Version) – Part II: Motor Experiences of Daily Living"
+      }
+    }
+  },
+  "mds_2_13": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_047",
+        "Label": "MDS-UPDRS (Revised Version) – Part II: Motor Experiences of Daily Living"
+      }
+    }
+  },
+  "mds_3_1_off": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_048",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_2_off": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_048",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_3_1_off": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_048",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_3_2_off": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_048",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_3_3_off": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_048",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_3_4_off": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_048",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_3_5_off": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_048",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_4_1_off": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_048",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_4_2_off": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_048",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_5_1_off": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_048",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_5_2_off": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_048",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_6_1_off": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_048",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_6_2_off": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_048",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_7_1_off": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_048",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_7_2_off": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_048",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_8_1_off": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_048",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_8_2_off": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_048",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_9_off": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_048",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_10_off": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_048",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_11_off": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_048",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_12_off": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_048",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_13_off": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_048",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_14_off": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_048",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_15_1_off": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_048",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_15_2_off": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_048",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_16_1_off": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_048",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_16_2_off": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_048",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_17_1_off": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_048",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_17_2_off": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_048",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_17_3_off": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_048",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_17_4_off": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_048",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_17_5_off": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_048",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_18_off": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_048",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
+      }
+    }
+  },
+  "mds_3a_off": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_048",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
+      }
+    }
+  },
+  "mds_3b_off": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_048",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
+      }
+    }
+  },
+  "mds_3c_off": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_048",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
+      }
+    }
+  },
+  "mds_3c_1_off": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_048",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
+      }
+    }
+  },
+  "mds_3a_dysk_off": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_048",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
+      }
+    }
+  },
+  "mds_3b_dysk_off": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_048",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_1_on": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_049",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_2_on": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_049",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_3_1_on": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_049",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_3_2_on": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_049",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_3_3_on": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_049",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_3_4_on": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_049",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_3_5_on": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_049",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_4_1_on": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_049",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_4_2_on": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_049",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_5_1_on": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_049",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_5_2_on": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_049",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_6_1_on": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_049",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_6_2_on": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_049",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_7_1_on": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_049",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_7_2_on": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_049",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_8_1_on": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_049",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_8_2_on": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_049",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_9_on": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_049",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_10_on": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_049",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_11_on": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_049",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_12_on": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_049",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_13_on": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_049",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_14_on": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_049",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_15_1_on": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_049",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_15_2_on": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_049",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_16_1_on": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_049",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_16_2_on": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_049",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_17_1_on": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_049",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_17_2_on": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_049",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_17_3_on": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_049",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_17_4_on": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_049",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_17_5_on": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_049",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
+      }
+    }
+  },
+  "mds_3_18_on": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_049",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
+      }
+    }
+  },
+  "mds_3a_on": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_049",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
+      }
+    }
+  },
+  "mds_3b_on": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_049",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
+      }
+    }
+  },
+  "mds_3c_on": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_049",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
+      }
+    }
+  },
+  "mds_3c_1_on": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_049",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
+      }
+    }
+  },
+  "mds_3a_dysk_on": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_049",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
+      }
+    }
+  },
+  "mds_3b_dysk_on": {
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_049",
+        "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
+      }
+    }
+  },
+  "mds_4_1": {
+    "Description": ""
+  },
+  "mds_4_2": {
+    "Description": ""
+  },
+  "mds_4_3": {
+    "Description": ""
+  },
+  "mds_4_4": {
+    "Description": ""
+  },
+  "mds_4_5": {
+    "Description": ""
+  },
+  "mds_4_6": {
+    "Description": ""
+  },
+  "examen_realise_scopa": {
+    "Description": ""
+  },
+  "scop_aval": {
+    "Description": ""
+  },
+  "scop_saliv": {
+    "Description": ""
+  },
+  "scop_dysph": {
+    "Description": ""
+  },
+  "scop_rassas": {
+    "Description": ""
+  },
+  "scop_constip": {
+    "Description": ""
+  },
+  "scop_sell": {
+    "Description": ""
+  },
+  "scop_incont_fec": {
+    "Description": ""
+  },
+  "scop_scgastro": {
+    "Description": ""
+  },
+  "scop_imper": {
+    "Description": ""
+  },
+  "scop_incont_urin": {
+    "Description": ""
+  },
+  "scop_vessie": {
+    "Description": ""
+  },
+  "scop_dysur": {
+    "Description": ""
+  },
+  "scop_freq": {
+    "Description": ""
+  },
+  "scop_noct": {
+    "Description": ""
+  },
+  "scop_scurin": {
+    "Description": ""
+  },
+  "scop_etourd_lev": {
+    "Description": ""
+  },
+  "scop_etourd_deb": {
+    "Description": ""
+  },
+  "scop_syncop": {
+    "Description": ""
+  },
+  "scop_sc_cv": {
+    "Description": ""
+  },
+  "scop_transp_diurn": {
+    "Description": ""
+  },
+  "scop_transp_noct": {
+    "Description": ""
+  },
+  "scop_ebloui": {
+    "Description": ""
+  },
+  "scop_intol_froid": {
+    "Description": ""
+  },
+  "scop_intol_chaud": {
+    "Description": ""
+  },
+  "scop_sc_thermo": {
+    "Description": ""
+  },
+  "scop_erect": {
+    "Description": ""
+  },
+  "scop_ejac": {
+    "Description": ""
+  },
+  "scop_sechvag": {
+    "Description": ""
+  },
+  "scop_orgasm": {
+    "Description": ""
+  },
+  "scop_sc_sex_h": {
+    "Description": ""
+  },
+  "scop_sc_sex_f": {
+    "Description": ""
+  },
+  "scop_sc_tot": {
+    "Description": ""
+  },
+  "examen_realise_nmss": {
+    "Description": ""
+  },
+  "nmss_1": {
+    "Description": ""
+  },
+  "nmss_2": {
+    "Description": ""
+  },
+  "nmss_3": {
+    "Description": ""
+  },
+  "nmss_4": {
+    "Description": ""
+  },
+  "nmss_5": {
+    "Description": ""
+  },
+  "nmss_6": {
+    "Description": ""
+  },
+  "nmss_7": {
+    "Description": ""
+  },
+  "nmss_8": {
+    "Description": ""
+  },
+  "nmss_9": {
+    "Description": ""
+  },
+  "nmss_10": {
+    "Description": ""
+  },
+  "nmss_11": {
+    "Description": ""
+  },
+  "nmss_12": {
+    "Description": ""
+  },
+  "nmss_13": {
+    "Description": ""
+  },
+  "nmss_14": {
+    "Description": ""
+  },
+  "nmss_15": {
+    "Description": ""
+  },
+  "nmss_16": {
+    "Description": ""
+  },
+  "nmss_17": {
+    "Description": ""
+  },
+  "nmss_18": {
+    "Description": ""
+  },
+  "nmss_19": {
+    "Description": ""
+  },
+  "nmss_20": {
+    "Description": ""
+  },
+  "nmss_21": {
+    "Description": ""
+  },
+  "nmss_22": {
+    "Description": ""
+  },
+  "nmss_23": {
+    "Description": ""
+  },
+  "nmss_24": {
+    "Description": ""
+  },
+  "nmss_25": {
+    "Description": ""
+  },
+  "nmss_26": {
+    "Description": ""
+  },
+  "nmss_27": {
+    "Description": ""
+  },
+  "nmss_28": {
+    "Description": ""
+  },
+  "nmss_29": {
+    "Description": ""
+  },
+  "nmss_30": {
+    "Description": ""
+  },
+  "calc_sc_nmss": {
+    "Description": ""
+  },
+  "examen_realise_epworth": {
+    "Description": ""
+  },
+  "ep_lire": {
+    "Description": ""
+  },
+  "ep_tele": {
+    "Description": ""
+  },
+  "ep_public": {
+    "Description": ""
+  },
+  "ep_transp": {
+    "Description": ""
+  },
+  "ep_allonge": {
+    "Description": ""
+  },
+  "ep_parler": {
+    "Description": ""
+  },
+  "ep_calme": {
+    "Description": ""
+  },
+  "ep_voitur": {
+    "Description": ""
+  },
+  "epworth_sc": {
+    "Description": ""
+  },
+  "upsit_done": {
+    "Description": ""
+  },
+  "upsit_sc": {
+    "Description": ""
+  },
+  "diag_olf": {
+    "Description": ""
+  },
+  "irm_fait": {
+    "Description": ""
+  },
+  "irm_3dt1": {
+    "Description": ""
+  },
+  "irm_3dt2": {
+    "Description": ""
+  },
+  "irm_tdif": {
+    "Description": ""
+  },
+  "irm_r2": {
+    "Description": ""
+  },
+  "irm_rs": {
+    "Description": ""
+  },
+  "irm_melan": {
+    "Description": ""
+  },
+  "datsc_real": {
+    "Description": ""
+  }
+}
