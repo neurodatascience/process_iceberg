@@ -26,6 +26,11 @@ cp /path/to/iceberg_redcap_export.xlsx input/
 
 look at `static/iceberg_neurobagel_mapping.yaml` to see the expected Excel sheet and column names
 
+> [!NOTE]  
+> If you want to change how the ICEBERG dataset will appear in Neurobagel,
+> edit the `static/iceberg_dataset_description.json` file.
+> Refer to the [Neurobagel docs](https://neurobagel.org/user_guide/dataset_description/) for details.
+
 ---
 
 ## Step-by-step
