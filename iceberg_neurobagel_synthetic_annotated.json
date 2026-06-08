@@ -27,17 +27,30 @@
         "TermURL": "nb:Age",
         "Label": "Age"
       },
-      "VariableType": "Continuous"
+      "VariableType": "Continuous",
+      "MissingValues": [
+        ""
+      ],
+      "Format": {
+        "TermURL": "nb:FromFloat",
+        "Label": "float"
+      },
+      "ValueRange": {
+        "Min": 48.75,
+        "Max": 70.5
+      }
     }
   },
   "sexe": {
     "Description": "",
     "Levels": {
       "1.0": {
-        "Description": ""
+        "Description": "",
+        "TermURL": "snomed:248153007"
       },
       "2.0": {
-        "Description": ""
+        "Description": "",
+        "TermURL": "snomed:248152002"
       },
       "0.0": {
         "Description": ""
@@ -53,18 +66,27 @@
       },
       "VariableType": "Categorical",
       "Levels": {
-        "1.0": {},
-        "2.0": {},
-        "0.0": {},
-        "": {}
-      }
+        "1.0": {
+          "TermURL": "snomed:248153007",
+          "Label": "Male"
+        },
+        "2.0": {
+          "TermURL": "snomed:248152002",
+          "Label": "Female"
+        }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "groupe": {
     "Description": "",
     "Levels": {
       "1.0": {
-        "Description": ""
+        "Description": "",
+        "TermURL": "ncit:C94342"
       },
       "2.0": {
         "Description": ""
@@ -73,10 +95,12 @@
         "Description": ""
       },
       "4.0": {
-        "Description": ""
+        "Description": "idiopathic PD",
+        "TermURL": "snomed:49049000"
       },
       "5.0": {
-        "Description": ""
+        "Description": "PD with genetic mutation",
+        "TermURL": "snomed:49049000"
       },
       "0.0": {
         "Description": ""
@@ -92,14 +116,25 @@
       },
       "VariableType": "Categorical",
       "Levels": {
-        "1.0": {},
-        "2.0": {},
-        "3.0": {},
-        "4.0": {},
-        "5.0": {},
-        "0.0": {},
-        "": {}
-      }
+        "1.0": {
+          "TermURL": "ncit:C94342",
+          "Label": "Healthy Control"
+        },
+        "4.0": {
+          "TermURL": "snomed:49049000",
+          "Label": "Parkinson's disease"
+        },
+        "5.0": {
+          "TermURL": "snomed:49049000",
+          "Label": "Parkinson's disease"
+        }
+      },
+      "MissingValues": [
+        "",
+        "0.0",
+        "3.0",
+        "2.0"
+      ]
     }
   },
   "statut_inclusion": {
@@ -125,7 +160,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_038",
         "Label": "Montreal Cognitive Assessment"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "trail_moca": {
@@ -139,7 +178,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_038",
         "Label": "Montreal Cognitive Assessment"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "cube_moca": {
@@ -153,7 +196,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_038",
         "Label": "Montreal Cognitive Assessment"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "clock_moca": {
@@ -167,7 +214,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_038",
         "Label": "Montreal Cognitive Assessment"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "naming_moca": {
@@ -181,7 +232,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_038",
         "Label": "Montreal Cognitive Assessment"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "digits_moca": {
@@ -195,7 +250,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_038",
         "Label": "Montreal Cognitive Assessment"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "letters_moca": {
@@ -209,7 +268,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_038",
         "Label": "Montreal Cognitive Assessment"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "substraction_moca": {
@@ -223,7 +286,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_038",
         "Label": "Montreal Cognitive Assessment"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "repeat_moca": {
@@ -237,7 +304,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_038",
         "Label": "Montreal Cognitive Assessment"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "fluency_moca": {
@@ -251,7 +322,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_038",
         "Label": "Montreal Cognitive Assessment"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "abstraction_moca": {
@@ -265,7 +340,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_038",
         "Label": "Montreal Cognitive Assessment"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "recall_memory_moca": {
@@ -279,7 +358,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_038",
         "Label": "Montreal Cognitive Assessment"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "orientation_moca": {
@@ -293,7 +376,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_038",
         "Label": "Montreal Cognitive Assessment"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "scolarite_moca": {
@@ -307,7 +394,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_038",
         "Label": "Montreal Cognitive Assessment"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "total_moca": {
@@ -321,7 +412,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_038",
         "Label": "Montreal Cognitive Assessment"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "f_moca_fluences": {
@@ -335,7 +430,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_038",
         "Label": "Montreal Cognitive Assessment"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "examen_realise_mmse": {
@@ -349,7 +448,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_039",
         "Label": "Mini-Mental State Examination"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mms1": {
@@ -363,7 +466,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_039",
         "Label": "Mini-Mental State Examination"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mms2": {
@@ -377,7 +484,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_039",
         "Label": "Mini-Mental State Examination"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mms3": {
@@ -391,7 +502,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_039",
         "Label": "Mini-Mental State Examination"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mms4": {
@@ -405,7 +520,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_039",
         "Label": "Mini-Mental State Examination"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mms5": {
@@ -419,7 +538,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_039",
         "Label": "Mini-Mental State Examination"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mms6": {
@@ -433,7 +556,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_039",
         "Label": "Mini-Mental State Examination"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mms7": {
@@ -447,7 +574,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_039",
         "Label": "Mini-Mental State Examination"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mms8": {
@@ -461,7 +592,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_039",
         "Label": "Mini-Mental State Examination"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mms9": {
@@ -475,7 +610,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_039",
         "Label": "Mini-Mental State Examination"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mms10": {
@@ -489,7 +628,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_039",
         "Label": "Mini-Mental State Examination"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mms11": {
@@ -503,7 +646,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_039",
         "Label": "Mini-Mental State Examination"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mms12": {
@@ -517,7 +664,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_039",
         "Label": "Mini-Mental State Examination"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mms13": {
@@ -531,7 +682,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_039",
         "Label": "Mini-Mental State Examination"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mms14": {
@@ -545,7 +700,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_039",
         "Label": "Mini-Mental State Examination"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mms15": {
@@ -559,7 +718,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_039",
         "Label": "Mini-Mental State Examination"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mms16": {
@@ -573,7 +736,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_039",
         "Label": "Mini-Mental State Examination"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mms17": {
@@ -587,7 +754,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_039",
         "Label": "Mini-Mental State Examination"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mms18": {
@@ -601,7 +772,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_039",
         "Label": "Mini-Mental State Examination"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mms19": {
@@ -615,7 +790,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_039",
         "Label": "Mini-Mental State Examination"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mms20": {
@@ -629,7 +808,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_039",
         "Label": "Mini-Mental State Examination"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mms21": {
@@ -643,7 +826,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_039",
         "Label": "Mini-Mental State Examination"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mms22": {
@@ -657,7 +844,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_039",
         "Label": "Mini-Mental State Examination"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mms23": {
@@ -671,7 +862,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_039",
         "Label": "Mini-Mental State Examination"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mms24": {
@@ -685,7 +880,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_039",
         "Label": "Mini-Mental State Examination"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mms25": {
@@ -699,7 +898,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_039",
         "Label": "Mini-Mental State Examination"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mms26": {
@@ -713,7 +916,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_039",
         "Label": "Mini-Mental State Examination"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mms27": {
@@ -727,7 +934,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_039",
         "Label": "Mini-Mental State Examination"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mms28": {
@@ -741,7 +952,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_039",
         "Label": "Mini-Mental State Examination"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mms29": {
@@ -755,7 +970,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_039",
         "Label": "Mini-Mental State Examination"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mms30": {
@@ -769,7 +988,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_039",
         "Label": "Mini-Mental State Examination"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "calc_mms_orient": {
@@ -783,7 +1006,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_039",
         "Label": "Mini-Mental State Examination"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "calc_mms_apprent": {
@@ -797,7 +1024,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_039",
         "Label": "Mini-Mental State Examination"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "calc_mms_attent": {
@@ -811,7 +1042,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_039",
         "Label": "Mini-Mental State Examination"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "calc_mms_rapp": {
@@ -825,7 +1060,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_039",
         "Label": "Mini-Mental State Examination"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "calc_mms_lang": {
@@ -839,7 +1078,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_039",
         "Label": "Mini-Mental State Examination"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "calc_mms_tot": {
@@ -853,7 +1096,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_039",
         "Label": "Mini-Mental State Examination"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "examen_realise_mattis": {
@@ -936,7 +1183,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_048",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_1_1": {
@@ -950,7 +1201,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_046",
         "Label": "MDS-UPDRS (Revised Version) – Part I: Non-Motor Experiences of Daily Living"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_1_2": {
@@ -964,7 +1219,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_046",
         "Label": "MDS-UPDRS (Revised Version) – Part I: Non-Motor Experiences of Daily Living"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_1_3": {
@@ -978,7 +1237,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_046",
         "Label": "MDS-UPDRS (Revised Version) – Part I: Non-Motor Experiences of Daily Living"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_1_4": {
@@ -992,7 +1255,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_046",
         "Label": "MDS-UPDRS (Revised Version) – Part I: Non-Motor Experiences of Daily Living"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_1_5": {
@@ -1006,7 +1273,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_046",
         "Label": "MDS-UPDRS (Revised Version) – Part I: Non-Motor Experiences of Daily Living"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_1_6": {
@@ -1020,7 +1291,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_046",
         "Label": "MDS-UPDRS (Revised Version) – Part I: Non-Motor Experiences of Daily Living"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_1_7": {
@@ -1034,7 +1309,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_046",
         "Label": "MDS-UPDRS (Revised Version) – Part I: Non-Motor Experiences of Daily Living"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_1_8": {
@@ -1048,7 +1327,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_046",
         "Label": "MDS-UPDRS (Revised Version) – Part I: Non-Motor Experiences of Daily Living"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_1_9": {
@@ -1062,7 +1345,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_046",
         "Label": "MDS-UPDRS (Revised Version) – Part I: Non-Motor Experiences of Daily Living"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_1_10": {
@@ -1076,7 +1363,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_046",
         "Label": "MDS-UPDRS (Revised Version) – Part I: Non-Motor Experiences of Daily Living"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_1_11": {
@@ -1090,7 +1381,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_046",
         "Label": "MDS-UPDRS (Revised Version) – Part I: Non-Motor Experiences of Daily Living"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_1_12": {
@@ -1104,7 +1399,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_046",
         "Label": "MDS-UPDRS (Revised Version) – Part I: Non-Motor Experiences of Daily Living"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_1_13": {
@@ -1118,7 +1417,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_046",
         "Label": "MDS-UPDRS (Revised Version) – Part I: Non-Motor Experiences of Daily Living"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_2_1": {
@@ -1132,7 +1435,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_047",
         "Label": "MDS-UPDRS (Revised Version) – Part II: Motor Experiences of Daily Living"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_2_2": {
@@ -1146,7 +1453,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_047",
         "Label": "MDS-UPDRS (Revised Version) – Part II: Motor Experiences of Daily Living"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_2_3": {
@@ -1160,7 +1471,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_047",
         "Label": "MDS-UPDRS (Revised Version) – Part II: Motor Experiences of Daily Living"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_2_4": {
@@ -1174,7 +1489,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_047",
         "Label": "MDS-UPDRS (Revised Version) – Part II: Motor Experiences of Daily Living"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_2_5": {
@@ -1188,7 +1507,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_047",
         "Label": "MDS-UPDRS (Revised Version) – Part II: Motor Experiences of Daily Living"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_2_6": {
@@ -1202,7 +1525,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_047",
         "Label": "MDS-UPDRS (Revised Version) – Part II: Motor Experiences of Daily Living"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_2_7": {
@@ -1216,7 +1543,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_047",
         "Label": "MDS-UPDRS (Revised Version) – Part II: Motor Experiences of Daily Living"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_2_8": {
@@ -1230,7 +1561,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_047",
         "Label": "MDS-UPDRS (Revised Version) – Part II: Motor Experiences of Daily Living"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_2_9": {
@@ -1244,7 +1579,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_047",
         "Label": "MDS-UPDRS (Revised Version) – Part II: Motor Experiences of Daily Living"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_2_10": {
@@ -1258,7 +1597,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_047",
         "Label": "MDS-UPDRS (Revised Version) – Part II: Motor Experiences of Daily Living"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_2_11": {
@@ -1272,7 +1615,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_047",
         "Label": "MDS-UPDRS (Revised Version) – Part II: Motor Experiences of Daily Living"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_2_12": {
@@ -1286,7 +1633,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_047",
         "Label": "MDS-UPDRS (Revised Version) – Part II: Motor Experiences of Daily Living"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_2_13": {
@@ -1300,7 +1651,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_047",
         "Label": "MDS-UPDRS (Revised Version) – Part II: Motor Experiences of Daily Living"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_1_off": {
@@ -1314,7 +1669,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_048",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_2_off": {
@@ -1328,7 +1687,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_048",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_3_1_off": {
@@ -1342,7 +1705,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_048",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_3_2_off": {
@@ -1356,7 +1723,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_048",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_3_3_off": {
@@ -1370,7 +1741,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_048",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_3_4_off": {
@@ -1384,7 +1759,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_048",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_3_5_off": {
@@ -1398,7 +1777,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_048",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_4_1_off": {
@@ -1412,7 +1795,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_048",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_4_2_off": {
@@ -1426,7 +1813,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_048",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_5_1_off": {
@@ -1440,7 +1831,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_048",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_5_2_off": {
@@ -1454,7 +1849,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_048",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_6_1_off": {
@@ -1468,7 +1867,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_048",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_6_2_off": {
@@ -1482,7 +1885,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_048",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_7_1_off": {
@@ -1496,7 +1903,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_048",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_7_2_off": {
@@ -1510,7 +1921,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_048",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_8_1_off": {
@@ -1524,7 +1939,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_048",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_8_2_off": {
@@ -1538,7 +1957,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_048",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_9_off": {
@@ -1552,7 +1975,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_048",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_10_off": {
@@ -1566,7 +1993,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_048",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_11_off": {
@@ -1580,7 +2011,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_048",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_12_off": {
@@ -1594,7 +2029,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_048",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_13_off": {
@@ -1608,7 +2047,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_048",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_14_off": {
@@ -1622,7 +2065,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_048",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_15_1_off": {
@@ -1636,7 +2083,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_048",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_15_2_off": {
@@ -1650,7 +2101,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_048",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_16_1_off": {
@@ -1664,7 +2119,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_048",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_16_2_off": {
@@ -1678,7 +2137,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_048",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_17_1_off": {
@@ -1692,7 +2155,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_048",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_17_2_off": {
@@ -1706,7 +2173,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_048",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_17_3_off": {
@@ -1720,7 +2191,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_048",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_17_4_off": {
@@ -1734,7 +2209,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_048",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_17_5_off": {
@@ -1748,7 +2227,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_048",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_18_off": {
@@ -1762,7 +2245,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_048",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3a_off": {
@@ -1776,7 +2263,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_048",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3b_off": {
@@ -1790,7 +2281,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_048",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3c_off": {
@@ -1804,7 +2299,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_048",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3c_1_off": {
@@ -1818,7 +2317,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_048",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3a_dysk_off": {
@@ -1832,7 +2335,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_048",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3b_dysk_off": {
@@ -1846,7 +2353,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_048",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered OFF dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_1_on": {
@@ -1860,7 +2371,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_049",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_2_on": {
@@ -1874,7 +2389,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_049",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_3_1_on": {
@@ -1888,7 +2407,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_049",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_3_2_on": {
@@ -1902,7 +2425,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_049",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_3_3_on": {
@@ -1916,7 +2443,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_049",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_3_4_on": {
@@ -1930,7 +2461,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_049",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_3_5_on": {
@@ -1944,7 +2479,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_049",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_4_1_on": {
@@ -1958,7 +2497,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_049",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_4_2_on": {
@@ -1972,7 +2515,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_049",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_5_1_on": {
@@ -1986,7 +2533,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_049",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_5_2_on": {
@@ -2000,7 +2551,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_049",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_6_1_on": {
@@ -2014,7 +2569,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_049",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_6_2_on": {
@@ -2028,7 +2587,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_049",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_7_1_on": {
@@ -2042,7 +2605,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_049",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_7_2_on": {
@@ -2056,7 +2623,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_049",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_8_1_on": {
@@ -2070,7 +2641,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_049",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_8_2_on": {
@@ -2084,7 +2659,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_049",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_9_on": {
@@ -2098,7 +2677,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_049",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_10_on": {
@@ -2112,7 +2695,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_049",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_11_on": {
@@ -2126,7 +2713,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_049",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_12_on": {
@@ -2140,7 +2731,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_049",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_13_on": {
@@ -2154,7 +2749,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_049",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_14_on": {
@@ -2168,7 +2767,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_049",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_15_1_on": {
@@ -2182,7 +2785,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_049",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_15_2_on": {
@@ -2196,7 +2803,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_049",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_16_1_on": {
@@ -2210,7 +2821,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_049",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_16_2_on": {
@@ -2224,7 +2839,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_049",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_17_1_on": {
@@ -2238,7 +2857,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_049",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_17_2_on": {
@@ -2252,7 +2875,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_049",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_17_3_on": {
@@ -2266,7 +2893,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_049",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_17_4_on": {
@@ -2280,7 +2911,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_049",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_17_5_on": {
@@ -2294,7 +2929,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_049",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3_18_on": {
@@ -2308,7 +2947,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_049",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3a_on": {
@@ -2322,7 +2965,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_049",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3b_on": {
@@ -2336,7 +2983,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_049",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3c_on": {
@@ -2350,7 +3001,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_049",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3c_1_on": {
@@ -2364,7 +3019,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_049",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3a_dysk_on": {
@@ -2378,7 +3037,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_049",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_3b_dysk_on": {
@@ -2392,7 +3055,11 @@
       "IsPartOf": {
         "TermURL": "enigmapd:trm_049",
         "Label": "MDS-UPDRS (Revised Version) – Part III: Motor Examination; if administered ON dopaminergic medication"
-      }
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
     }
   },
   "mds_4_1": {
@@ -2414,205 +3081,1210 @@
     "Description": ""
   },
   "examen_realise_scopa": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_129",
+        "Label": "Scales for Outcomes in Parkinson’s disease - Autonomic Dysfunction"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "scop_aval": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_129",
+        "Label": "Scales for Outcomes in Parkinson’s disease - Autonomic Dysfunction"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "scop_saliv": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_129",
+        "Label": "Scales for Outcomes in Parkinson’s disease - Autonomic Dysfunction"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "scop_dysph": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_129",
+        "Label": "Scales for Outcomes in Parkinson’s disease - Autonomic Dysfunction"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "scop_rassas": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_129",
+        "Label": "Scales for Outcomes in Parkinson’s disease - Autonomic Dysfunction"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "scop_constip": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_129",
+        "Label": "Scales for Outcomes in Parkinson’s disease - Autonomic Dysfunction"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "scop_sell": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_129",
+        "Label": "Scales for Outcomes in Parkinson’s disease - Autonomic Dysfunction"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "scop_incont_fec": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_129",
+        "Label": "Scales for Outcomes in Parkinson’s disease - Autonomic Dysfunction"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "scop_scgastro": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_129",
+        "Label": "Scales for Outcomes in Parkinson’s disease - Autonomic Dysfunction"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "scop_imper": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_129",
+        "Label": "Scales for Outcomes in Parkinson’s disease - Autonomic Dysfunction"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "scop_incont_urin": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_129",
+        "Label": "Scales for Outcomes in Parkinson’s disease - Autonomic Dysfunction"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "scop_vessie": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_129",
+        "Label": "Scales for Outcomes in Parkinson’s disease - Autonomic Dysfunction"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "scop_dysur": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_129",
+        "Label": "Scales for Outcomes in Parkinson’s disease - Autonomic Dysfunction"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "scop_freq": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_129",
+        "Label": "Scales for Outcomes in Parkinson’s disease - Autonomic Dysfunction"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "scop_noct": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_129",
+        "Label": "Scales for Outcomes in Parkinson’s disease - Autonomic Dysfunction"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "scop_scurin": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_129",
+        "Label": "Scales for Outcomes in Parkinson’s disease - Autonomic Dysfunction"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "scop_etourd_lev": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_129",
+        "Label": "Scales for Outcomes in Parkinson’s disease - Autonomic Dysfunction"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "scop_etourd_deb": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_129",
+        "Label": "Scales for Outcomes in Parkinson’s disease - Autonomic Dysfunction"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "scop_syncop": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_129",
+        "Label": "Scales for Outcomes in Parkinson’s disease - Autonomic Dysfunction"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "scop_sc_cv": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_129",
+        "Label": "Scales for Outcomes in Parkinson’s disease - Autonomic Dysfunction"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "scop_transp_diurn": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_129",
+        "Label": "Scales for Outcomes in Parkinson’s disease - Autonomic Dysfunction"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "scop_transp_noct": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_129",
+        "Label": "Scales for Outcomes in Parkinson’s disease - Autonomic Dysfunction"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "scop_ebloui": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_129",
+        "Label": "Scales for Outcomes in Parkinson’s disease - Autonomic Dysfunction"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "scop_intol_froid": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_129",
+        "Label": "Scales for Outcomes in Parkinson’s disease - Autonomic Dysfunction"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "scop_intol_chaud": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_129",
+        "Label": "Scales for Outcomes in Parkinson’s disease - Autonomic Dysfunction"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "scop_sc_thermo": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_129",
+        "Label": "Scales for Outcomes in Parkinson’s disease - Autonomic Dysfunction"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "scop_erect": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_129",
+        "Label": "Scales for Outcomes in Parkinson’s disease - Autonomic Dysfunction"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "scop_ejac": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_129",
+        "Label": "Scales for Outcomes in Parkinson’s disease - Autonomic Dysfunction"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "scop_sechvag": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_129",
+        "Label": "Scales for Outcomes in Parkinson’s disease - Autonomic Dysfunction"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "scop_orgasm": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_129",
+        "Label": "Scales for Outcomes in Parkinson’s disease - Autonomic Dysfunction"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "scop_sc_sex_h": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_129",
+        "Label": "Scales for Outcomes in Parkinson’s disease - Autonomic Dysfunction"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "scop_sc_sex_f": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_129",
+        "Label": "Scales for Outcomes in Parkinson’s disease - Autonomic Dysfunction"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "scop_sc_tot": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_129",
+        "Label": "Scales for Outcomes in Parkinson’s disease - Autonomic Dysfunction"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "examen_realise_nmss": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_033",
+        "Label": "Non-Motor Symptoms Questionnaire"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "nmss_1": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_033",
+        "Label": "Non-Motor Symptoms Questionnaire"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "nmss_2": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_033",
+        "Label": "Non-Motor Symptoms Questionnaire"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "nmss_3": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_033",
+        "Label": "Non-Motor Symptoms Questionnaire"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "nmss_4": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_033",
+        "Label": "Non-Motor Symptoms Questionnaire"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "nmss_5": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_033",
+        "Label": "Non-Motor Symptoms Questionnaire"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "nmss_6": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_033",
+        "Label": "Non-Motor Symptoms Questionnaire"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "nmss_7": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_033",
+        "Label": "Non-Motor Symptoms Questionnaire"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "nmss_8": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_033",
+        "Label": "Non-Motor Symptoms Questionnaire"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "nmss_9": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_033",
+        "Label": "Non-Motor Symptoms Questionnaire"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "nmss_10": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_033",
+        "Label": "Non-Motor Symptoms Questionnaire"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "nmss_11": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_033",
+        "Label": "Non-Motor Symptoms Questionnaire"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "nmss_12": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_033",
+        "Label": "Non-Motor Symptoms Questionnaire"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "nmss_13": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_033",
+        "Label": "Non-Motor Symptoms Questionnaire"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "nmss_14": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_033",
+        "Label": "Non-Motor Symptoms Questionnaire"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "nmss_15": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_033",
+        "Label": "Non-Motor Symptoms Questionnaire"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "nmss_16": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_033",
+        "Label": "Non-Motor Symptoms Questionnaire"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "nmss_17": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_033",
+        "Label": "Non-Motor Symptoms Questionnaire"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "nmss_18": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_033",
+        "Label": "Non-Motor Symptoms Questionnaire"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "nmss_19": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_033",
+        "Label": "Non-Motor Symptoms Questionnaire"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "nmss_20": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_033",
+        "Label": "Non-Motor Symptoms Questionnaire"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "nmss_21": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_033",
+        "Label": "Non-Motor Symptoms Questionnaire"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "nmss_22": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_033",
+        "Label": "Non-Motor Symptoms Questionnaire"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "nmss_23": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_033",
+        "Label": "Non-Motor Symptoms Questionnaire"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "nmss_24": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_033",
+        "Label": "Non-Motor Symptoms Questionnaire"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "nmss_25": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_033",
+        "Label": "Non-Motor Symptoms Questionnaire"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "nmss_26": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_033",
+        "Label": "Non-Motor Symptoms Questionnaire"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "nmss_27": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_033",
+        "Label": "Non-Motor Symptoms Questionnaire"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "nmss_28": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_033",
+        "Label": "Non-Motor Symptoms Questionnaire"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "nmss_29": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_033",
+        "Label": "Non-Motor Symptoms Questionnaire"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "nmss_30": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_033",
+        "Label": "Non-Motor Symptoms Questionnaire"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "calc_sc_nmss": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_033",
+        "Label": "Non-Motor Symptoms Questionnaire"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "examen_realise_epworth": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_014",
+        "Label": "Epworth Sleepiness Scale"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "ep_lire": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_014",
+        "Label": "Epworth Sleepiness Scale"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "ep_tele": {
     "Description": ""
@@ -2636,10 +4308,40 @@
     "Description": ""
   },
   "epworth_sc": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_014",
+        "Label": "Epworth Sleepiness Scale"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "upsit_done": {
-    "Description": ""
+    "Description": "",
+    "Annotations": {
+      "IsAbout": {
+        "TermURL": "nb:Assessment",
+        "Label": "Assessment Tool"
+      },
+      "VariableType": "Collection",
+      "IsPartOf": {
+        "TermURL": "enigmapd:trm_130",
+        "Label": "University of Pennsylvania Smell Identification Test"
+      },
+      "MissingValues": [
+        "",
+        "0.0"
+      ]
+    }
   },
   "upsit_sc": {
     "Description": ""
