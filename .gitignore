@@ -1,5 +1,6 @@
 *.xlsx
 *.tsv
+*.jsonld
 
 venv/
 .venv/

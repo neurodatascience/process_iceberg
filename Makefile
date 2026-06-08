@@ -82,6 +82,8 @@ bagel-pheno:
 		--pheno               $(TSV_OUT) \
 		--dictionary          $(ANNOTATED_DICT) \
 		--dataset-description $(DATASET_DESC) \
+		--config              enigma-pd \
+		-f \
 		--output              $(JSONLD_PHENO)
 
 # ── Bagel imaging integration ──────────────────────────────────────────────────
@@ -91,6 +93,7 @@ bagel-bids: bagel-pheno
 		--jsonld-path $(JSONLD_PHENO) \
 		--bids-table  $(IMAGING_OUT) \
 		--output      $(JSONLD_OUT) \
+		-f \
 		--overwrite
 
 .PHONY: bagel

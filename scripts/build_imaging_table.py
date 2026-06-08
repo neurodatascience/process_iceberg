@@ -151,7 +151,8 @@ def build_table(tsv_path: Path, modality_map: dict) -> pd.DataFrame:
                 acquired = False
 
             if acquired:
-                rows.append({"sub": sub, "ses": ses, "suffix": suffix, "path": ""})
+                path = f"/path/to/sub-{sub}/ses-{ses}"
+                rows.append({"sub": sub, "ses": ses, "suffix": suffix, "path": path})
 
     return pd.DataFrame(rows, columns=["sub", "ses", "suffix", "path"])
 
@@ -187,10 +188,6 @@ def main():
     if not table.empty:
         counts = table.groupby("suffix").size().to_dict()
         print(f"  By suffix: {counts}")
-    print(
-        "\n  NOTE: 'path' column is empty — populate with actual file paths "
-        "before submitting to Neurobagel."
-    )
 
 
 if __name__ == "__main__":
