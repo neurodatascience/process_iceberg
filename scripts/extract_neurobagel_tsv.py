@@ -52,18 +52,33 @@ def parse_args():
         help="Neurobagel variable mapping YAML",
     )
     p.add_argument(
-        "--excel",
-        default=None,
-        metavar="FILE",
-        help="ICEBERG REDCap export Excel file (place in input/)",
-    )
-    p.add_argument(
         "--output",
         default="output/iceberg_neurobagel_phenotype.tsv",
         metavar="FILE",
         help="Output TSV path",
     )
     return p.parse_args()
+
+
+# ── Excel auto-detection ──────────────────────────────────────────────────────
+EXCEL_EXTENSIONS = (".xlsx", ".xls")
+INPUT_DIR = Path("input")
+
+def find_excel() -> Path:
+    candidates = [p for p in INPUT_DIR.iterdir() if p.suffix.lower() in EXCEL_EXTENSIONS]
+    if not candidates:
+        sys.exit(
+            f"No Excel file found in {INPUT_DIR}/.\n"
+            f"Copy the REDCap export there (expected extensions: "
+            f"{', '.join(EXCEL_EXTENSIONS)})."
+        )
+    if len(candidates) > 1:
+        names = ", ".join(p.name for p in sorted(candidates))
+        sys.exit(
+            f"Multiple Excel files found in {INPUT_DIR}/: {names}\n"
+            f"Leave only the single REDCap dump in {INPUT_DIR}/."
+        )
+    return candidates[0]
 
 
 # ── YAML traversal ────────────────────────────────────────────────────────────
@@ -175,12 +190,11 @@ def main():
     args = parse_args()
 
     mapping_path = Path(args.mapping)
-    excel_path = Path(args.excel)
+    excel_path = find_excel()
     output_path = Path(args.output)
 
-    for path in (mapping_path, excel_path):
-        if not path.exists():
-            sys.exit(f"File not found: {path}")
+    if not mapping_path.exists():
+        sys.exit(f"File not found: {mapping_path}")
 
     # ── Load mapping ──────────────────────────────────────────────────────────
     print(f"Mapping : {mapping_path}")

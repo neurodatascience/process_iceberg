@@ -1,16 +1,5 @@
 PYTHON  := python3
 
-# ── Input (auto-detect single .xlsx in input/) ─────────────────────────────────
-EXCEL_FILES := $(wildcard input/*.xlsx)
-n_excel     := $(words $(EXCEL_FILES))
-ifeq ($(n_excel),0)
-  $(error No Excel file found in input/. Copy your .xlsx file there.)
-endif
-ifneq ($(n_excel),1)
-  $(error Multiple Excel files found in input/ ($(EXCEL_FILES)). Leave only one.)
-endif
-EXCEL := $(firstword $(EXCEL_FILES))
-
 # ── Static files ───────────────────────────────────────────────────────────────
 MAPPING       := static/iceberg_neurobagel_mapping.yaml
 ANNOTATED_DICT := static/iceberg_neurobagel_synthetic_annotated.json
@@ -45,7 +34,7 @@ help:
 	@echo "  make clean       Remove generated output files"
 	@echo "  make help        Show this message"
 	@echo ""
-	@echo "Input Excel detected: $(EXCEL)"
+	@echo "Excel input: place a single .xlsx/.xls REDCap dump in input/"
 	@echo ""
 
 # ── Extraction ─────────────────────────────────────────────────────────────────
@@ -53,7 +42,6 @@ help:
 extract:
 	$(PYTHON) scripts/extract_neurobagel_tsv.py \
 		--mapping $(MAPPING) \
-		--excel   $(EXCEL)   \
 		--output  $(TSV_OUT)
 
 # ── Imaging table ─────────────────────────────────────────────────────────────
