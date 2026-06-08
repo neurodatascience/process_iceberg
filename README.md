@@ -1,24 +1,30 @@
 # ICEBERG → Neurobagel
 
-Pipeline for extracting and annotating ICEBERG cohort data into a Neurobagel graph node.
+This repo contains a pipeline to
+- extracting information from the ICEBERG RedCap dump (excel file)
+- combine the information with a pre-generated data dictionary (`static/iceberg_neurobagel_synthetic_annotated.json`)
+- generate the ICEBERG Neurobagel graph file
+- launch a local Neurobagel query portal that can query ICEBERG and also the ENIGMA-PD nodes
 
 ---
 
 ## Prerequisites
 
-- Python 3.11+
-- [bagel-cli](https://neurobagel.org/user_guide/cli/) installed and on your `PATH`
+- Python 3.11+ (ideally a virtual environment)
 - Docker with the Compose plugin
+- The full ICEBERG RedCap dump as a Excel file (.xlsx)
 
 ---
 
-## Setup
+## Preparation
 
 Copy your REDCap Excel export into `input/` — exactly one file:
 
 ```bash
 cp /path/to/iceberg_redcap_export.xlsx input/
 ```
+
+look at `static/iceberg_neurobagel_mapping.yaml` to see the expected Excel sheet and column names
 
 ---
 
