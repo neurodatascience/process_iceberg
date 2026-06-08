@@ -1,0 +1,26 @@
+[
+  {
+    "NodeName": "EPD - Amsterdam UMC",
+    "ApiURL": "https://enigma.neurobagel.org/amsterdam"
+  },
+  {
+    "NodeName": "EPD - Nijmegen UMC",
+    "ApiURL": "https://enigma.neurobagel.org/nijmegen"
+  },
+  {
+    "NodeName": "EPD - Groningen UMC",
+    "ApiURL": "https://enigma.neurobagel.org/groningen"
+  },
+  {
+    "NodeName": "EPD - Montreal",
+    "ApiURL": "https://qpn.neurobagel.org/enigma-qpn"
+  },
+  {
+    "NodeName": "EPD - Catalog datasets",
+    "ApiURL": "https://enigma.neurobagel.org/catalog-datasets"
+  },
+  {
+        "NodeName": "Paris Brain Institute",
+        "ApiURL": "http://api:8000"
+    }
+]

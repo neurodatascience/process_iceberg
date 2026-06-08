@@ -120,7 +120,7 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
+# .env
 .venv
 env/
 venv/
@@ -146,7 +146,7 @@ dmypy.json
 # Neurobagel
 # RDF data configuration file, created automatically during setup from data-config_template.ttl based on .env values
 data-config.ttl
-local_nb_nodes.json
+#local_nb_nodes.json
 
 # Pyre type checker
 .pyre/
@@ -243,7 +243,7 @@ web_modules/
 .yarn-integrity
 
 # dotenv environment variable files
-.env
+# .env
 .env.development.local
 .env.test.local
 .env.production.local
