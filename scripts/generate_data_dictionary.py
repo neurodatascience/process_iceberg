@@ -282,12 +282,12 @@ def parse_args():
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
     p.add_argument("--mapping",
-                   default="iceberg_neurobagel_mapping.yaml", metavar="FILE")
+                   default="static/iceberg_neurobagel_mapping.yaml", metavar="FILE")
     p.add_argument("--tsv-template",
-                   default="iceberg_neurobagel_phenotype.tsv", metavar="FILE",
+                   default="output/iceberg_neurobagel_phenotype.tsv", metavar="FILE",
                    help="Real or synthetic TSV (only column names/order are used)")
     p.add_argument("--output",
-                   default="iceberg_data_dictionary.tsv", metavar="FILE")
+                   default="output/iceberg_data_dictionary.tsv", metavar="FILE")
     return p.parse_args()
 
 

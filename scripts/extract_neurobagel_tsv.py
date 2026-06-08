@@ -47,19 +47,19 @@ def parse_args():
     )
     p.add_argument(
         "--mapping",
-        default="iceberg_neurobagel_mapping.yaml",
+        default="static/iceberg_neurobagel_mapping.yaml",
         metavar="FILE",
         help="Neurobagel variable mapping YAML",
     )
     p.add_argument(
         "--excel",
-        default="2023_04_05_Gel_Iceberg_patient1.xlsx",
+        default=None,
         metavar="FILE",
-        help="ICEBERG REDCap export Excel file",
+        help="ICEBERG REDCap export Excel file (place in input/)",
     )
     p.add_argument(
         "--output",
-        default="iceberg_neurobagel_phenotype.tsv",
+        default="output/iceberg_neurobagel_phenotype.tsv",
         metavar="FILE",
         help="Output TSV path",
     )

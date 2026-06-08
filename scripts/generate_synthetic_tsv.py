@@ -234,13 +234,13 @@ def parse_args():
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
     p.add_argument("--mapping",
-                   default="iceberg_neurobagel_mapping.yaml", metavar="FILE",
+                   default="static/iceberg_neurobagel_mapping.yaml", metavar="FILE",
                    help="Neurobagel variable mapping YAML")
     p.add_argument("--tsv-template",
-                   default="iceberg_neurobagel_phenotype.tsv", metavar="FILE",
+                   default="output/iceberg_neurobagel_phenotype.tsv", metavar="FILE",
                    help="Real phenotype TSV (only column names/order are used)")
     p.add_argument("--output",
-                   default="iceberg_neurobagel_synthetic.tsv", metavar="FILE",
+                   default="output/iceberg_neurobagel_synthetic.tsv", metavar="FILE",
                    help="Output synthetic TSV path")
     p.add_argument("--n-rows", type=int, default=35, metavar="N",
                    help="Minimum rows (extended automatically if any column needs more)")
