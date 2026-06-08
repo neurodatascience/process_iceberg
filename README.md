@@ -18,6 +18,13 @@ This repo contains a pipeline to
 
 ## Preparation
 
+> [!NOTE]  
+> If you want to change how the ICEBERG dataset will appear in Neurobagel,
+> edit the `static/iceberg_dataset_description.json` file.
+> Refer to the [Neurobagel docs](https://neurobagel.org/user_guide/dataset_description/) for details.
+
+### 1. Copy the REDCap Excel file
+
 Copy your REDCap Excel export into `input/` — exactly one file:
 
 ```bash
@@ -26,22 +33,27 @@ cp /path/to/iceberg_redcap_export.xlsx input/
 
 look at `static/iceberg_neurobagel_mapping.yaml` to see the expected Excel sheet and column names
 
-> [!NOTE]  
-> If you want to change how the ICEBERG dataset will appear in Neurobagel,
-> edit the `static/iceberg_dataset_description.json` file.
-> Refer to the [Neurobagel docs](https://neurobagel.org/user_guide/dataset_description/) for details.
-
----
-
-## Step-by-step
-
-### 1. Install Python dependencies
+### 2. Install the dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2. Extract phenotypic and imaging TSVs from the Excel file
+---
+
+## Quickstart
+
+```bash
+make run
+```
+
+This should launch a Neurobagel query portal at
+[http://localhost:3000](http://localhost:3000).
+
+
+## Step-by-step
+
+### 1. Extract phenotypic and imaging TSVs from the Excel file
 
 ```bash
 make all
@@ -51,7 +63,7 @@ Produces:
 - `output/iceberg_neurobagel_phenotype.tsv` — participant × variable table
 - `output/iceberg_neurobagel_imaging.tsv` — one row per acquired imaging modality
 
-### 3. Generate the `.jsonld` file
+### 2. Generate the `.jsonld` file
 
 ```bash
 make bagel
@@ -59,23 +71,13 @@ make bagel
 
 Runs `bagel pheno` (annotates the phenotype TSV using `static/iceberg_neurobagel_synthetic_annotated.json` and `static/iceberg_dataset_description.json`) then `bagel bids` (folds in the imaging table). Produces `output/iceberg_neurobagel.jsonld`.
 
-### 4. Deploy to the Neurobagel node
+### 3. Deploy to the Neurobagel node
 
 ```bash
 make deploy
 ```
 
 Copies `output/iceberg_neurobagel.jsonld` into `neurobagel/data/` and starts the node with `docker compose up -d`.
-
----
-
-## Full pipeline (all steps at once)
-
-```bash
-make run
-```
-
-Equivalent to `make all && make bagel && make deploy`.
 
 ---
 
