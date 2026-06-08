@@ -12,10 +12,15 @@ SYNTHETIC_OUT := output/iceberg_neurobagel_synthetic.tsv
 DICT_OUT      := output/iceberg_data_dictionary.tsv
 JSONLD_PHENO  := output/iceberg_neurobagel_pheno.jsonld
 JSONLD_OUT    := output/iceberg_neurobagel.jsonld
+NODE_DATA_DIR := neurobagel/data
 
 # ── Default target ─────────────────────────────────────────────────────────────
 .PHONY: all
 all: extract imaging
+
+# ── Full pipeline ──────────────────────────────────────────────────────────────
+.PHONY: run
+run: all bagel deploy
 
 # ── Help ───────────────────────────────────────────────────────────────────────
 .PHONY: help
@@ -30,6 +35,8 @@ help:
 	@echo "  make bagel-pheno Annotate phenotype TSV → $(JSONLD_PHENO)"
 	@echo "  make bagel-bids  Add imaging data → $(JSONLD_OUT)"
 	@echo "  make bagel       bagel-pheno + bagel-bids"
+	@echo "  make deploy      Copy JSONLD to node and start docker compose"
+	@echo "  make run         Full pipeline: all + bagel + deploy"
 	@echo "  make all         extract + imaging"
 	@echo "  make clean       Remove generated output files"
 	@echo "  make help        Show this message"
@@ -88,6 +95,12 @@ bagel-bids: bagel-pheno
 
 .PHONY: bagel
 bagel: bagel-bids
+
+# ── Deploy to neurobagel node ──────────────────────────────────────────────────
+.PHONY: deploy
+deploy:
+	cp $(JSONLD_OUT) $(NODE_DATA_DIR)/
+	docker compose -f neurobagel/docker-compose.yml up -d
 
 # ── Clean ──────────────────────────────────────────────────────────────────────
 .PHONY: clean
