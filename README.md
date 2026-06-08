@@ -77,7 +77,16 @@ Runs `bagel pheno` (annotates the phenotype TSV using `static/iceberg_neurobagel
 make deploy
 ```
 
-Copies `output/iceberg_neurobagel.jsonld` into `neurobagel/data/` and starts the node with `docker compose up -d`.
+Removes all existing `.jsonld` files from `neurobagel/data/`, copies `output/iceberg_neurobagel.jsonld` there, then starts the node with `docker compose up -d`.
+
+> [!WARNING]
+> `make deploy` clears the entire `neurobagel/data/` directory before copying. If you have placed additional `.jsonld` files there manually, they will be deleted.
+
+### 4. Shut down the node
+
+```bash
+make stop
+```
 
 ---
 
@@ -103,6 +112,7 @@ neurobagel/ Neurobagel node (git subtree) — data/ is the JSONLD target directo
 | `make imaging` | Imaging TSV only (requires `make extract` first) |
 | `make bagel` | Generate JSONLD from TSVs + data dictionary |
 | `make deploy` | Copy JSONLD to `neurobagel/data/` and start Docker node |
+| `make stop` | Shut down the Docker node |
 | `make synthetic` | Generate synthetic test TSV for annotation testing |
 | `make dictionary` | Generate long-form data dictionary TSV |
 | `make clean` | Remove all generated output files |

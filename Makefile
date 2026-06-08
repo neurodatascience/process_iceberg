@@ -36,6 +36,7 @@ help:
 	@echo "  make bagel-bids  Add imaging data → $(JSONLD_OUT)"
 	@echo "  make bagel       bagel-pheno + bagel-bids"
 	@echo "  make deploy      Copy JSONLD to node and start docker compose"
+	@echo "  make stop        Shut down the neurobagel node"
 	@echo "  make run         Full pipeline: all + bagel + deploy"
 	@echo "  make all         extract + imaging"
 	@echo "  make clean       Remove generated output files"
@@ -102,8 +103,14 @@ bagel: bagel-bids
 # ── Deploy to neurobagel node ──────────────────────────────────────────────────
 .PHONY: deploy
 deploy:
+	rm -f $(NODE_DATA_DIR)/*.jsonld
 	cp $(JSONLD_OUT) $(NODE_DATA_DIR)/
 	docker compose -f neurobagel/docker-compose.yml up -d
+
+# ── Stop neurobagel node ───────────────────────────────────────────────────────
+.PHONY: stop
+stop:
+	docker compose -f neurobagel/docker-compose.yml down
 
 # ── Clean ──────────────────────────────────────────────────────────────────────
 .PHONY: clean

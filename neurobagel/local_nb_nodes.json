@@ -22,5 +22,9 @@
   {
         "NodeName": "Paris Brain Institute",
         "ApiURL": "http://api:8000"
+    },
+    {
+        "NodeName": "Ontario Brain Institute",
+        "ApiURL": "https://nb-api.obicloud.ca/"
     }
 ]
